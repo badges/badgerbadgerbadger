@@ -1,7 +1,7 @@
 [![Build Status](http://b.adge.me/travis/pikesley/badger.svg)](https://travis-ci.org/pikesley/badger)
 [![Coverage Status](http://b.adge.me/coveralls/pikesley/badger.svg)](https://coveralls.io/r/pikesley/badger)
 [![Dependency Status](http://b.adge.me/gemnasium/pikesley/badger.svg)](https://gemnasium.com/pikesley/badger)
-[![Code Climate](http://b.adge.me/codeclimate/github/pikesley/badger.svg)](https://codeclimate.com/pikesley/badger)
+[![Code Climate](http://b.adge.me/codeclimate/github/pikesley/badger.svg)](https://codeclimate.com/github/pikesley/badger)
 
 
 #Badger
