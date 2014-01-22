@@ -24,7 +24,7 @@ module Badger
       @badger.badge[0].should match /\[\!\[Build Status\]\(http:\/\/b.adge.me\/travis\/doge\/wow.svg\)\]\(https:\/\/travis-ci.org\/doge\/wow\)/
       @badger.badge[1].should match /\[\!\[Coverage Status\]\(http:\/\/b.adge.me\/coveralls\/doge\/wow.svg\)\]\(https:\/\/coveralls.io\/r\/doge\/wow\)/
       @badger.badge[2].should match /\[\!\[Dependency Status\]\(http:\/\/b.adge.me\/gemnasium\/doge\/wow.svg\)\]\(https:\/\/gemnasium.com\/doge\/wow\)/
-      @badger.badge[3].should match /\[\!\[Code Climate\]\(http:\/\/b.adge.me\/codeclimate\/github\/doge\/wow.svg\)\]\(https:\/\/codeclimate.com\/doge\/wow\)/
+      @badger.badge[3].should match /\[\!\[Code Climate\]\(http:\/\/b.adge.me\/codeclimate\/github\/doge\/wow.svg\)\]\(https:\/\/codeclimate.com\/github\/doge\/wow\)/
     end
   end
 end

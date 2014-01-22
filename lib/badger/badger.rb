@@ -33,7 +33,7 @@ module Badger
           },
           :code_climate => {
               :alt_text   => 'Code Climate',
-              :url        => 'codeclimate.com',
+              :url        => 'codeclimate.com/github',
               :badge_slug => 'codeclimate/github'
           }
       }
