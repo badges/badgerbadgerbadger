@@ -1,5 +1,6 @@
-require "badger/version"
+require 'badger/version'
+require 'badger/badger'
 
 module Badger
-  # Your code goes here...
+
 end
