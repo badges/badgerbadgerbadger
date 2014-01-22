@@ -1,4 +1,4 @@
-require 'badger'
+require 'spec_helper'
 
 module Badger
   describe Badger do
