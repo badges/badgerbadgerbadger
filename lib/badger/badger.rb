@@ -10,8 +10,8 @@ module Badger
     end
 
     def get_url ugly_string
-      parts = ugly_string.split("\n")[0].split("\t")[1].split(' ')
-      parts[0]
+      parts = /origin\s(.*)\s\(.*/.match(ugly_string)
+      parts[1]
     end
 
     def badge
@@ -38,7 +38,7 @@ module Badger
           }
       }
 
-      s = ''
+      s = []
       services.each_value do |h|
         s << "[![%s](http://b.adge.me/%s/%s.svg)](https://%s/%s)" % [
             h[:alt_text],
@@ -47,17 +47,33 @@ module Badger
             h[:url],
             @github_slug
         ]
-        s << "\n"
       end
 
       s
     end
 
+    def to_s
+      badge.each do |b|
+        b
+      end
+    end
+
     def apply
-      lines = File.open('README.md', 'r').readlines
+      readme = File.join(File.dirname(__FILE__), '/../../', 'README.md')
+      lines = File.open(readme, 'r').readlines
 
-      r = File.open 'README.md', 'w'
+      r = File.open readme, 'w'
 
+      badge.each do |b|
+        r.write b
+        r.write "\n"
+      end
+
+      r.write "\n"
+
+      lines.each do |line|
+        r.write line
+      end
     end
   end
 end
