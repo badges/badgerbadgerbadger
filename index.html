@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Badger by pikesley</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Badger</h1>
+        <h2>Generate Github project badges the easy way</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/pikesley/badger/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/pikesley/badger/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/pikesley/badger" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <p><a href="https://travis-ci.org/pikesley/badger"><img src="http://b.adge.me/travis/pikesley/badger.svg" alt="Build Status"></a>
+<a href="https://coveralls.io/r/pikesley/badger"><img src="http://b.adge.me/coveralls/pikesley/badger.svg" alt="Coverage Status"></a>
+<a href="https://gemnasium.com/pikesley/badger"><img src="http://b.adge.me/gemnasium/pikesley/badger.svg" alt="Dependency Status"></a>
+<a href="https://codeclimate.com/github/pikesley/badger"><img src="http://b.adge.me/codeclimate/github/pikesley/badger.svg" alt="Code Climate"></a></p>
+
+<h1>
+<a name="badger" class="anchor" href="#badger"><span class="octicon octicon-link"></span></a>Badger</h1>
+
+<p>Because I grow weary of copy-n-pasting the badge URLs into the README of every project, and the <a href="http://b.adge.me">b.adge.me</a> API now supports all of the services I use</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Add it to your Gemfile</p>
+
+<pre><code>gem 'badger', :github =&gt; 'pikesley/badger'
+bundle
+</code></pre>
+
+<p>Then</p>
+
+<pre><code>badger badge
+[![Build Status](http://b.adge.me/travis/pikesley/badger.svg)](https://travis-ci.org/pikesley/badger)
+[![Coverage Status](http://b.adge.me/coveralls/pikesley/badger.svg)](https://coveralls.io/r/pikesley/badger)
+[![Dependency Status](http://b.adge.me/gemnasium/pikesley/badger.svg)](https://gemnasium.com/pikesley/badger)
+[![Code Climate](http://b.adge.me/codeclimate/github/pikesley/badger.svg)](https://codeclimate.com/pikesley/badger)
+</code></pre>
+
+<p>ready to paste into the top of your README (with the correct URLs for your repo (hopefully)).</p>
+
+<h2>
+<a name="help-me-make-it-better" class="anchor" href="#help-me-make-it-better"><span class="octicon octicon-link"></span></a>Help me make it better</h2>
+
+<pre><code>git clone https://github.com/pikesley/badger
+cd badger
+bundle
+rake
+</code></pre>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
