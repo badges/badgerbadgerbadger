@@ -3,7 +3,7 @@ require 'badger'
 module Badger
   describe Badger do
     before :each do
-      @badger = Badger.new
+      @badger = Badger.new "origin\thttps://github.com/doge/wow.git (fetch)\norigin\thttps://github.com/doge/wow.git (push)\n"
     end
 
     context 'should extract the user and repo' do
@@ -18,6 +18,13 @@ module Badger
 
     it 'should pick out the url' do
       @badger.get_url("origin\thttps://github.com/doge/wow.git (fetch)\norigin\thttps://github.com/doge/wow.git (push)\n").should eql('https://github.com/doge/wow.git')
+    end
+
+    it 'should generate a badge list' do
+      @badger.badge.should match /\[\!\[Build Status\]\(http:\/\/b.adge.me\/travis\/doge\/wow.svg\)\]\(https:\/\/travis-ci.org\/doge\/wow\)/
+      @badger.badge.should match /\[\!\[Coverage Status\]\(http:\/\/b.adge.me\/coveralls\/doge\/wow.svg\)\]\(https:\/\/coveralls.io\/r\/doge\/wow\)/
+      @badger.badge.should match /\[\!\[Dependency Status\]\(http:\/\/b.adge.me\/gemnasium\/doge\/wow.svg\)\]\(https:\/\/gemnasium.com\/doge\/wow\)/
+      @badger.badge.should match /\[\!\[Code Climate\]\(http:\/\/b.adge.me\/codeclimate\/github\/doge\/wow.svg\)\]\(https:\/\/codeclimate.com\/doge\/wow\)/
     end
   end
 end

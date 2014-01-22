@@ -1,3 +1,3 @@
-Before do
-  @aruba_timeout_seconds = 5
-end
+require 'aruba/cucumber'
+require 'aruba-doubles/cucumber'
+require 'badger/badger'
