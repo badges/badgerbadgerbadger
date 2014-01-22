@@ -23,7 +23,7 @@ Then
     [![Dependency Status](http://b.adge.me/gemnasium/pikesley/badger.svg)](https://gemnasium.com/pikesley/badger)
     [![Code Climate](http://b.adge.me/codeclimate/github/pikesley/badger.svg)](https://codeclimate.com/pikesley/badger)
     
-ready to paste into the top of your README.
+ready to paste into the top of your README (with the correct URLs for your repo (hopefully)).
 
 ##Help me make it better
 
