@@ -57,23 +57,5 @@ module Badger
         b
       end
     end
-
-    def apply
-      readme = File.join(File.dirname(__FILE__), '/../../', 'README.md')
-      lines = File.open(readme, 'r').readlines
-
-      r = File.open readme, 'w'
-
-      badge.each do |b|
-        r.write b
-        r.write "\n"
-      end
-
-      r.write "\n"
-
-      lines.each do |line|
-        r.write line
-      end
-    end
   end
 end
