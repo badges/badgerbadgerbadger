@@ -9,4 +9,4 @@ deploy:
   gem: badgerbadgerbadger
   on:
     repo: pikesley/badger
-    tags: false
+    tags: true
