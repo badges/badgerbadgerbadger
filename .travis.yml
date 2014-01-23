@@ -5,6 +5,7 @@ deploy:
   provider: rubygems
   api_key:
     secure: JEldPgrZqTywKlgD6apC0uoc9u0LUh0dteNjhbLHVtE25/xumeyilqUCRxJ2mH+ncbiZknKeK/ZdFQcfWKmAKotsav56ZJuj68D1y03wGFnZrTIkhasSoF5X4umYAhMeQoKR7itacf0wpd2xMvddZpCfT5K9xjOwkverZf6CMyg=
+  gemspec: badger.gemspec
   gem: badgerbadgerbadger
   on:
     repo: pikesley/badger
