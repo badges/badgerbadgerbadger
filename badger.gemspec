@@ -8,26 +8,26 @@ Gem::Specification.new do |spec|
   spec.version       = Badger::VERSION
   spec.authors       = ['pikesley']
   spec.email         = ['sam@pikesley.org']
-  spec.description   = %q{Generate ALL THE BADGES}
-  spec.summary       = %q{BADGE}
-  spec.homepage      = ''
+  spec.description   = %q{Generate Github project badges}
+  spec.summary       = %q{Generate Github project badges}
+  spec.homepage      = 'https://github.com/pikesley/badger'
   spec.license       = 'MIT'
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'thor'
+  spec.add_dependency 'thor', '~> 0.18'
 
-  spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'rspec-pride'
-  spec.add_development_dependency 'cucumber'
-  spec.add_development_dependency 'aruba'
-  spec.add_development_dependency 'aruba-doubles'
-  spec.add_development_dependency 'guard'
-  spec.add_development_dependency 'guard-rspec'
-  spec.add_development_dependency 'guard-cucumber'
-  spec.add_development_dependency 'coveralls'
+  spec.add_development_dependency 'bundler', '~> 1.5'
+  spec.add_development_dependency 'rake', '~> 10.1'
+  spec.add_development_dependency 'rspec', '~> 2.14'
+  spec.add_development_dependency 'rspec-pride', '~> 2.3'
+  spec.add_development_dependency 'cucumber', '~> 1.3'
+  spec.add_development_dependency 'aruba', '~> 0.5'
+  spec.add_development_dependency 'aruba-doubles', '~> 1.2'
+  spec.add_development_dependency 'guard', '~> 2.3'
+  spec.add_development_dependency 'guard-rspec', '~> 4.2'
+  spec.add_development_dependency 'guard-cucumber', '~> 1.4'
+  spec.add_development_dependency 'coveralls', '~> 0.7'
 end
