@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'badger/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'badger'
+  spec.name          = 'badgerbadgerbadger'
   spec.version       = Badger::VERSION
   spec.authors       = ['pikesley']
   spec.email         = ['sam@pikesley.org']
