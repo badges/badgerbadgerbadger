@@ -25,16 +25,11 @@ Then
     
 ready to paste into the top of your README (with the correct URLs for your repo (hopefully)).
 
+Or if you're on a Mac, pipe the output into `pbcopy` to add the stuff directly to your clipboard:
+
+  badger badge | pbcopy
+
 ##Help me make it better
-
-because it's currently all kinds of broken:
-
-    ➔ badger badge
-    /Users/sam/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.0/lib/bundler/definition.rb:390:in `validate_ruby!': Your Ruby version is 1.8.7, but your Gemfile specified 2.1.0 (Bundler::RubyVersionMismatch)
-
-WTFF?
-
-So yeah, please:
 
     git clone https://github.com/pikesley/badger
     cd badger
