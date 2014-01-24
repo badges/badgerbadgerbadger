@@ -27,15 +27,6 @@ ready to paste into the top of your README (with the correct URLs for your repo 
 
 ##Help me make it better
 
-because it's currently all kinds of broken:
-
-    ➔ badger badge
-    /Users/sam/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.0/lib/bundler/definition.rb:390:in `validate_ruby!': Your Ruby version is 1.8.7, but your Gemfile specified 2.1.0 (Bundler::RubyVersionMismatch)
-
-WTFF?
-
-So yeah, please:
-
     git clone https://github.com/pikesley/badger
     cd badger
     bundle
