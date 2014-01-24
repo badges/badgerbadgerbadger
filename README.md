@@ -25,6 +25,10 @@ Then
     
 ready to paste into the top of your README (with the correct URLs for your repo (hopefully)).
 
+Or if you're on a Mac, pipe the output into `pbcopy` to add the stuff directly to your clipboard:
+
+  badger badge | pbcopy
+
 ##Help me make it better
 
     git clone https://github.com/pikesley/badger
