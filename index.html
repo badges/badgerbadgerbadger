@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Badger : Generate Github project badges the easy way" />
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Badger by pikesley</title>
+    <title>Badger</title>
   </head>
 
   <body>
 
-    <header>
-      <div class="container">
-        <h1>Badger</h1>
-        <h2>Generate Github project badges the easy way</h2>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pikesley/badger">View on GitHub</a>
 
-        <section id="downloads">
-          <a href="https://github.com/pikesley/badger/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/pikesley/badger/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/pikesley/badger" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+          <h1 id="project_title">Badger</h1>
+          <h2 id="project_tagline">Generate Github project badges the easy way</h2>
 
-    <div class="container">
-      <section id="main_content">
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/pikesley/badger/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/pikesley/badger/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <p><a href="https://travis-ci.org/pikesley/badger"><img src="http://b.adge.me/travis/pikesley/badger.svg" alt="Build Status"></a>
 <a href="https://coveralls.io/r/pikesley/badger"><img src="http://b.adge.me/coveralls/pikesley/badger.svg" alt="Coverage Status"></a>
 <a href="https://gemnasium.com/pikesley/badger"><img src="http://b.adge.me/gemnasium/pikesley/badger.svg" alt="Dependency Status"></a>
-<a href="https://codeclimate.com/github/pikesley/badger"><img src="http://b.adge.me/codeclimate/github/pikesley/badger.svg" alt="Code Climate"></a></p>
+<a href="https://codeclimate.com/github/pikesley/badger"><img src="http://b.adge.me/codeclimate/github/pikesley/badger.svg" alt="Code Climate"></a>
+<a href="http://pikesley.mit-license.org"><img src="http://b.adge.me/:license-mit-blue.svg" alt="License"></a></p>
 
 <h1>
 <a name="badger" class="anchor" href="#badger"><span class="octicon octicon-link"></span></a>Badger</h1>
@@ -43,7 +47,7 @@
 
 <p>Add it to your Gemfile</p>
 
-<pre><code>gem 'badger', :github =&gt; 'pikesley/badger'
+<pre><code>gem 'badgerbadgerbadger', :github =&gt; 'pikesley/badger'
 bundle
 </code></pre>
 
@@ -58,6 +62,18 @@ bundle
 
 <p>ready to paste into the top of your README (with the correct URLs for your repo (hopefully)).</p>
 
+<p>Try</p>
+
+<pre><code>badger help badge
+</code></pre>
+
+<p>For full usage. </p>
+
+<p>If you're on a Mac, pipe the output into <code>pbcopy</code> to add the stuff directly to your clipboard:</p>
+
+<pre><code>badger badge | pbcopy
+</code></pre>
+
 <h2>
 <a name="help-me-make-it-better" class="anchor" href="#help-me-make-it-better"><span class="octicon octicon-link"></span></a>Help me make it better</h2>
 
@@ -69,6 +85,15 @@ rake
       </section>
     </div>
 
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Badger maintained by <a href="https://github.com/pikesley">pikesley</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
     
+
   </body>
 </html>
