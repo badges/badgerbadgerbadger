@@ -13,7 +13,7 @@ Because I grow weary of copy-n-pasting the badge URLs into the README of every p
 
 Add it to your Gemfile
 
-    gem 'badgerbadgerbadger', :github => 'pikesley/badger'
+    gem 'badgerbadgerbadger'
     bundle
     
 Then
