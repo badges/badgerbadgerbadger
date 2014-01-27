@@ -26,7 +26,6 @@ Feature: Badge Robot
 [![Build Status](http://b.adge.me/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
     """
 
-    @wip
   Scenario: Generate a small subset of badges
      When I successfully run `badger badge --not coveralls,codeclimate /tmp/wow_repo`
      Then the output should contain:
@@ -43,8 +42,10 @@ Feature: Badge Robot
 [![Code Climate](http://b.adge.me/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
      """
 
- #  Scenario: Generate only certain badges
- #    When I successfully run `badger badge --just coveralls,codeclimate /tmp/wow_repo`
- #    Then the output should contain:
- #    """
- #    """
+   Scenario: Generate only certain badges
+     When I successfully run `badger badge --only coveralls,codeclimate /tmp/wow_repo`
+     Then the output should contain:
+     """
+[![Coverage Status](http://b.adge.me/coveralls/doge/wow.svg)](https://coveralls.io/r/doge/wow)
+[![Code Climate](http://b.adge.me/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
+     """
