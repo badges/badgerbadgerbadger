@@ -4,9 +4,9 @@ module Badger
   class Badger
     def initialize url
       @github_slug = github_slug url
-      @blacklist = []
+      @blacklist   = []
 
-      @services = YAML.load(
+      yaml = YAML.load(
           File.open(
               File.join(
                   File.dirname(__FILE__),
@@ -15,7 +15,11 @@ module Badger
                   'config/services.yaml'
               )
           )
-      )['services']['defaults']
+      )['services']
+
+      @services     = yaml['defaults']
+      @extras       = yaml['extras']
+      @extra_badges = []
     end
 
     def github_slug url
@@ -35,6 +39,7 @@ module Badger
           ]
         end
       end
+      s += @extra_badges
 
       s
     end
@@ -46,14 +51,35 @@ module Badger
       end
     end
 
-    def only services
-      services = [services] unless services.class.name == 'Array'
-      s = {}
-      services.each do |service|
-        s[service] = @services[service]
+    def only items
+      items = [items] unless items.class.name == 'Array'
+      s     = {}
+      items.each do |item|
+        s[item] = @services[item]
       end
 
       @services = s
+    end
+
+    def also items
+      items = [items] unless items.class.name == 'Array'
+      s     = ''
+      items.each do |item|
+
+        if @extras[item]
+          e = @extras[item]
+
+          owner = @github_slug.split('/')[0]
+          t     = e['url'] % owner
+          s     = "[![%s](http://b.adge.me/%s)](%s)" % [
+              e['alt_text'],
+              e['badge_path'],
+              t
+          ]
+        end
+
+        @extra_badges << s
+      end
     end
 
     def to_s

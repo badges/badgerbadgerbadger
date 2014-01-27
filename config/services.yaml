@@ -1,21 +1,27 @@
 services:
   defaults:
     travis:
-      alt_text: Build Status
-      url:      travis-ci.org
+      alt_text:   Build Status
+      url:        travis-ci.org
       badge_slug: travis
 
     coveralls:
-      alt_text:  Coverage Status
-      url: coveralls.io/r
+      alt_text:   Coverage Status
+      url:        coveralls.io/r
       badge_slug: coveralls
 
     gemnasium:
-      alt_text:  Dependency Status
-      url:       gemnasium.com
+      alt_text:   Dependency Status
+      url:        gemnasium.com
       badge_slug: gemnasium
 
     codeclimate:
-      alt_text: Code Climate
+      alt_text:   Code Climate
       url:        codeclimate.com/github
       badge_slug: codeclimate/github
+
+  extras:
+    mit:
+      alt_text:   License
+      badge_path: ":license-mit-blue.svg"
+      url:        http://%s.mit-license.org
