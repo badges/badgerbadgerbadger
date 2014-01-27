@@ -2,6 +2,7 @@ module Badger
   class Badger
     def initialize url
       @github_slug = github_slug url
+      @blacklist = []
     end
 
     def github_slug url
@@ -33,17 +34,24 @@ module Badger
       }
 
       s = []
-      services.each_value do |h|
-        s << "[![%s](http://b.adge.me/%s/%s.svg)](https://%s/%s)" % [
-            h[:alt_text],
-            h[:badge_slug],
-            @github_slug,
-            h[:url],
-            @github_slug
-        ]
+      services.each_pair do |k, h|
+        unless @blacklist.include? k.to_s
+          s << "[![%s](http://b.adge.me/%s/%s.svg)](https://%s/%s)" % [
+              h[:alt_text],
+              h[:badge_slug],
+              @github_slug,
+              h[:url],
+              @github_slug
+          ]
+        end
       end
 
       s
+    end
+
+    def remove services
+      services = [services] unless services.class.name == 'Array'
+      @blacklist += services
     end
 
     def to_s

@@ -4,9 +4,14 @@ require 'badger'
 module Badger
   class CLI < Thor
     desc 'badge', 'Generate default badge markdown'
+    option :not
 
     def badge dir = '.'
+      f = File.open '/tmp/wtf', 'w'
+      f.write options
+
       @badger = Badger.new Git.open(dir).remote.url
+      @badger.remove options[:not].split(',') if options[:not]
       puts @badger.to_s
     end
 
