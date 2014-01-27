@@ -4,10 +4,12 @@ require 'badger'
 module Badger
   class CLI < Thor
     desc 'badge', 'Generate default badge markdown'
-    def badge
-      github_remote = `hub remote -v | grep github`
-      @badger = Badger.new github_remote
+
+    def badge dir = '.'
+      @badger = Badger.new Git.open(dir).remote.url
       puts @badger.to_s
     end
+
+    default_task :badge
   end
 end

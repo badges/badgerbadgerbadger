@@ -1,17 +1,11 @@
 module Badger
   class Badger
-    def initialize origin_list
-      @github_slug = github_path(get_url(origin_list))
+    def initialize url
+      @github_slug = github_slug url
     end
 
-    def github_path url
-      parts = /.*github\.com.(.*)\.git/.match(url)
-      parts[1]
-    end
-
-    def get_url ugly_string
-      parts = /origin\s(.*)\s\(.*/.match(ugly_string)
-      parts[1]
+    def github_slug url
+      @github_slug ||= /.*github\.com.(.*)\.git/.match(url)[1]
     end
 
     def badge
