@@ -12,7 +12,7 @@ Because I grow weary of copy-n-pasting the badge URLs into the README of every p
 
 Add it to your Gemfile
 
-    gem 'badger', :github => 'pikesley/badger'
+    gem 'badgerbadgerbadger', :github => 'pikesley/badger'
     bundle
     
 Then
@@ -25,9 +25,15 @@ Then
     
 ready to paste into the top of your README (with the correct URLs for your repo (hopefully)).
 
-Or if you're on a Mac, pipe the output into `pbcopy` to add the stuff directly to your clipboard:
+Try
 
-  badger badge | pbcopy
+    badger help badge
+
+For full usage. 
+
+If you're on a Mac, pipe the output into `pbcopy` to add the stuff directly to your clipboard:
+
+    badger badge | pbcopy
 
 ##Help me make it better
 
