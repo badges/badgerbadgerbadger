@@ -6,7 +6,16 @@ module Badger
       @github_slug = github_slug url
       @blacklist = []
 
-      @services = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/services.yaml')))['services']
+      @services = YAML.load(
+          File.open(
+              File.join(
+                  File.dirname(__FILE__),
+                  '..',
+                  '..',
+                  'config/services.yaml'
+              )
+          )
+      )['services']['defaults']
     end
 
     def github_slug url
