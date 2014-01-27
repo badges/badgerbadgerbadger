@@ -21,11 +21,30 @@ Feature: Badge Robot
 [![Dependency Status](http://b.adge.me/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
 [![Code Climate](http://b.adge.me/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
     """
-
-  Scenario: Generate a small subset of badges
-    When I successfully run `badger badge --not coveralls,codeclimate /tmp/wow_repo`
-    Then the output should contain:
+    And the output should not contain:
     """
 [![Build Status](http://b.adge.me/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
-[![Dependency Status](http://b.adge.me/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
     """
+
+    @wip
+  Scenario: Generate a small subset of badges
+     When I successfully run `badger badge --not coveralls,codeclimate /tmp/wow_repo`
+     Then the output should contain:
+     """
+[![Build Status](http://b.adge.me/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
+[![Dependency Status](http://b.adge.me/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
+     """
+     And the output should not contain:
+     """
+[![Coverage Status](http://b.adge.me/coveralls/doge/wow.svg)](https://coveralls.io/r/doge/wow)
+     """
+     And the output should not contain:
+     """
+[![Code Climate](http://b.adge.me/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
+     """
+
+ #  Scenario: Generate only certain badges
+ #    When I successfully run `badger badge --just coveralls,codeclimate /tmp/wow_repo`
+ #    Then the output should contain:
+ #    """
+ #    """

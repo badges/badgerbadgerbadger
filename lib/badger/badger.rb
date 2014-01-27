@@ -26,7 +26,7 @@ module Badger
               :url        => 'gemnasium.com',
               :badge_slug => 'gemnasium',
           },
-          :code_climate => {
+          :codeclimate => {
               :alt_text   => 'Code Climate',
               :url        => 'codeclimate.com/github',
               :badge_slug => 'codeclimate/github'

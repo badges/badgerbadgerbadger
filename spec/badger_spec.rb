@@ -34,6 +34,7 @@ module Badger
       @badger.remove ['travis', 'gemnasium']
       @badger.badge[0].should match /\[\!\[Coverage Status\]\(http:\/\/b.adge.me\/coveralls\/doge\/wow.svg\)\]\(https:\/\/coveralls.io\/r\/doge\/wow\)/
       @badger.badge[1].should match /\[\!\[Code Climate\]\(http:\/\/b.adge.me\/codeclimate\/github\/doge\/wow.svg\)\]\(https:\/\/codeclimate.com\/github\/doge\/wow\)/
+      @badger.badge.length.should == 2
     end
   end
 end
