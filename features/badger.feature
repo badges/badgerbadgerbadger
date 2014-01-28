@@ -81,3 +81,12 @@ Feature: Badge Robot
 [![License](http://b.adge.me/:license-mit-blue.svg)](http://doge.mit-license.org)
 [![Gem Version](http://b.adge.me/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
      """
+
+   @gemspec
+   Scenario: gemspec and --also mit
+     Given I successfully run `badger badge --also mit /tmp/wow_repo`
+     Then the output should not contain:
+     """
+[![License](http://b.adge.me/:license-mit-blue.svg)](http://doge.mit-license.org)
+[![License](http://b.adge.me/:license-mit-blue.svg)](http://doge.mit-license.org)
+     """

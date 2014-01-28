@@ -41,7 +41,7 @@ module Badger
       end
       s += @extra_badges
 
-      s
+      s.uniq
     end
 
     def remove items
