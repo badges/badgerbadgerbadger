@@ -2,8 +2,8 @@
 [![Coverage Status](http://b.adge.me/coveralls/pikesley/badger.svg)](https://coveralls.io/r/pikesley/badger)
 [![Dependency Status](http://b.adge.me/gemnasium/pikesley/badger.svg)](https://gemnasium.com/pikesley/badger)
 [![Code Climate](http://b.adge.me/codeclimate/github/pikesley/badger.svg)](https://codeclimate.com/github/pikesley/badger)
+[![Gem Version](http://b.adge.me/gem/v/badgerbadgerbadger.svg)](https://rubygems.org/gems/badgerbadgerbadger)
 [![License](http://b.adge.me/:license-mit-blue.svg)](http://pikesley.mit-license.org)
-
 
 #Badger
 

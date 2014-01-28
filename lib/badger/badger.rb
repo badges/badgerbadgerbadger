@@ -15,11 +15,13 @@ module Badger
                   'config/services.yaml'
               )
           )
-      )['services']
+      )
 
-      @services     = yaml['defaults']
-      @extras       = yaml['extras']
-      @extra_badges = []
+      @services      = yaml['services']['defaults']
+      @extras        = yaml['services']['extras']
+      @badge_service = yaml['badge_service']
+      @extra_badges  = []
+
     end
 
     def github_slug url
@@ -30,8 +32,9 @@ module Badger
       s = []
       @services.each_pair do |k, h|
         unless @blacklist.include? k.to_s
-          s << "[![%s](http://b.adge.me/%s/%s.svg)](https://%s/%s)" % [
+          s << "[![%s](http://%s/%s/%s.svg)](https://%s/%s)" % [
               h['alt_text'],
+              @badge_service,
               h['badge_slug'],
               @github_slug,
               h['url'],
@@ -41,7 +44,7 @@ module Badger
       end
       s += @extra_badges
 
-      s
+      s.uniq
     end
 
     def remove items
@@ -71,14 +74,39 @@ module Badger
 
           owner = @github_slug.split('/')[0]
           t     = e['url'] % owner
-          s     = "[![%s](http://b.adge.me/%s)](%s)" % [
+          s     = "[![%s](http://%s/%s)](%s)" % [
               e['alt_text'],
+              @badge_service,
               e['badge_path'],
               t
           ]
         end
 
         @extra_badges << s
+      end
+    end
+
+    def gemspec lines
+      rg      = ''
+      rubygem = (lines.select { |l| /\.name\s/.match l })[0].split(/\s/)[-1][1..-2]
+      rg << "[![Gem Version](http://%s/gem/v/%s.svg)](https://rubygems.org/gems/%s)" % [
+          @badge_service,
+          rubygem,
+          rubygem
+      ]
+
+      @extra_badges << rg
+
+      lc      = ''
+      owner   = @github_slug.split('/')[0]
+      license = (lines.select { |l| /license/.match l })[0].split(/\s/)[-1]
+      if /MIT/i.match license
+        lc << "[![License](http://%s/:license-mit-blue.svg)](http://%s.mit-license.org)" % [
+            @badge_service,
+            owner
+        ]
+
+        @extra_badges << lc
       end
     end
 
