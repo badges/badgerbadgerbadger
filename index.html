@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Badger : Generate Github project badges the easy way" />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-    <title>Badger</title>
+    <title>Badger by pikesley</title>
   </head>
 
   <body>
+    <header>
+      <div class="inner">
+        <h1>Badger</h1>
+        <h2>Generate Github project badges the easy way</h2>
+        <a href="https://github.com/pikesley/badger" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/pikesley/badger">View on GitHub</a>
-
-          <h1 id="project_title">Badger</h1>
-          <h2 id="project_tagline">Generate Github project badges the easy way</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/pikesley/badger/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/pikesley/badger/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p><a href="https://travis-ci.org/pikesley/badger"><img src="http://b.adge.me/travis/pikesley/badger.svg" alt="Build Status"></a>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <p><a href="https://travis-ci.org/pikesley/badger"><img src="http://b.adge.me/travis/pikesley/badger.svg" alt="Build Status"></a>
 <a href="https://coveralls.io/r/pikesley/badger"><img src="http://b.adge.me/coveralls/pikesley/badger.svg" alt="Coverage Status"></a>
 <a href="https://gemnasium.com/pikesley/badger"><img src="http://b.adge.me/gemnasium/pikesley/badger.svg" alt="Dependency Status"></a>
 <a href="https://codeclimate.com/github/pikesley/badger"><img src="http://b.adge.me/codeclimate/github/pikesley/badger.svg" alt="Code Climate"></a>
+<a href="https://rubygems.org/gems/badgerbadgerbadger"><img src="http://b.adge.me/gem/v/badgerbadgerbadger.svg" alt="Gem Version"></a>
 <a href="http://pikesley.mit-license.org"><img src="http://b.adge.me/:license-mit-blue.svg" alt="License"></a></p>
 
 <h1>
@@ -45,9 +43,14 @@
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>Add it to your Gemfile</p>
+<p>Install it</p>
 
-<pre><code>gem 'badgerbadgerbadger', :github =&gt; 'pikesley/badger'
+<pre><code>gem install badgerbadgerbadger
+</code></pre>
+
+<p>or add it to your Gemfile</p>
+
+<pre><code>gem 'badgerbadgerbadger'
 bundle
 </code></pre>
 
@@ -57,7 +60,9 @@ bundle
 [![Build Status](http://b.adge.me/travis/pikesley/badger.svg)](https://travis-ci.org/pikesley/badger)
 [![Coverage Status](http://b.adge.me/coveralls/pikesley/badger.svg)](https://coveralls.io/r/pikesley/badger)
 [![Dependency Status](http://b.adge.me/gemnasium/pikesley/badger.svg)](https://gemnasium.com/pikesley/badger)
-[![Code Climate](http://b.adge.me/codeclimate/github/pikesley/badger.svg)](https://codeclimate.com/pikesley/badger)
+[![Code Climate](http://b.adge.me/codeclimate/github/pikesley/badger.svg)](https://codeclimate.com/github/pikesley/badger)
+[![Gem Version](http://b.adge.me/gem/v/badgerbadgerbadger.svg)](https://rubygems.org/gems/badgerbadgerbadger)
+[![License](http://b.adge.me/:license-mit-blue.svg)](http://pikesley.mit-license.org)
 </code></pre>
 
 <p>ready to paste into the top of your README (with the correct URLs for your repo (hopefully)).</p>
@@ -82,18 +87,25 @@ cd badger
 bundle
 rake
 </code></pre>
-      </section>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/pikesley/badger/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/pikesley/badger/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/pikesley/badger"></a> is maintained by <a href="https://github.com/pikesley">pikesley</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Badger maintained by <a href="https://github.com/pikesley">pikesley</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
+  
   </body>
 </html>
