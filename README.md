@@ -15,7 +15,7 @@ Install it
 
     gem install badgerbadgerbadger
 
-or it to your Gemfile
+or add it to your Gemfile
 
     gem 'badgerbadgerbadger'
     bundle
