@@ -59,5 +59,16 @@ module Badger
         @badger.badge[4].should == "[![License](http://b.adge.me/:license-mit-blue.svg)](http://doge.mit-license.org)"
       end
     end
+
+    context 'gemspec' do
+      it 'should generate badges based on gemspec' do
+        @badger.gemspec [
+                            "spec.name    'suchgem'",
+                            "spec.license 'MIT'"
+                        ]
+        @badger.badge[4].should == "[![License](http://b.adge.me/:license-mit-blue.svg)](http://doge.mit-license.org)"
+        @badger.badge[5].should == "[![Gem Version](http://b.adge.me/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)"
+      end
+    end
   end
 end

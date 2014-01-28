@@ -82,6 +82,28 @@ module Badger
       end
     end
 
+    def gemspec lines
+      a     = ''
+      owner = @github_slug.split('/')[0]
+      license = (lines.select { |l| /license/.match l })[0].split(/\s/)[-1]
+      if /MIT/i.match license
+        a << "[![License](http://b.adge.me/:license-mit-blue.svg)](http://%s.mit-license.org)" % [
+            owner
+        ]
+
+        @extra_badges << a
+      end
+
+      b = ''
+      rubygem = (lines.select { |l| /\.name\s/.match l })[0].split(/\s/)[-1][1..-2]
+      b << "[![Gem Version](http://b.adge.me/gem/v/%s.svg)](https://rubygems.org/gems/%s)" % [
+          rubygem,
+          rubygem
+      ]
+
+      @extra_badges << b
+    end
+
     def to_s
       badge.each do |b|
         b

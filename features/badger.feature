@@ -50,7 +50,6 @@ Feature: Badge Robot
 [![Code Climate](http://b.adge.me/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
      """
 
-     @wip
    Scenario: Generate additional badges
      When I successfully run `badger badge --also mit /tmp/wow_repo`
      Then the output should contain:
@@ -60,4 +59,17 @@ Feature: Badge Robot
 [![Dependency Status](http://b.adge.me/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
 [![Code Climate](http://b.adge.me/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
 [![License](http://b.adge.me/:license-mit-blue.svg)](http://doge.mit-license.org)
+     """
+
+   @gemspec
+   Scenario: Generate badges based on gemspec
+     When I successfully run `badger badge /tmp/wow_repo`
+     Then the output should contain:
+     """
+[![Build Status](http://b.adge.me/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
+[![Coverage Status](http://b.adge.me/coveralls/doge/wow.svg)](https://coveralls.io/r/doge/wow)
+[![Dependency Status](http://b.adge.me/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
+[![Code Climate](http://b.adge.me/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
+[![License](http://b.adge.me/:license-mit-blue.svg)](http://doge.mit-license.org)
+[![Gem Version](http://b.adge.me/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
      """
