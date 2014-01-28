@@ -78,8 +78,8 @@ Feature: Badge Robot
 [![Coverage Status](http://b.adge.me/coveralls/doge/wow.svg)](https://coveralls.io/r/doge/wow)
 [![Dependency Status](http://b.adge.me/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
 [![Code Climate](http://b.adge.me/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
-[![License](http://b.adge.me/:license-mit-blue.svg)](http://doge.mit-license.org)
 [![Gem Version](http://b.adge.me/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
+[![License](http://b.adge.me/:license-mit-blue.svg)](http://doge.mit-license.org)
      """
 
    @gemspec

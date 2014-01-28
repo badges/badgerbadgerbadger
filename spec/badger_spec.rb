@@ -66,8 +66,8 @@ module Badger
                             "spec.name    'suchgem'",
                             "spec.license 'MIT'"
                         ]
-        @badger.badge[4].should == "[![License](http://b.adge.me/:license-mit-blue.svg)](http://doge.mit-license.org)"
-        @badger.badge[5].should == "[![Gem Version](http://b.adge.me/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)"
+        @badger.badge[4].should == "[![Gem Version](http://b.adge.me/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)"
+        @badger.badge[5].should == "[![License](http://b.adge.me/:license-mit-blue.svg)](http://doge.mit-license.org)"
       end
     end
   end
