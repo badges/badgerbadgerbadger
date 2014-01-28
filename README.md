@@ -11,7 +11,11 @@ Because I grow weary of copy-n-pasting the badge URLs into the README of every p
 
 ##Usage
 
-Add it to your Gemfile
+Install it
+
+    gem install badgerbadgerbadger
+
+or it to your Gemfile
 
     gem 'badgerbadgerbadger'
     bundle
