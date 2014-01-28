@@ -12,6 +12,14 @@ Feature: Badge Robot
 [![Dependency Status](http://b.adge.me/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
 [![Code Climate](http://b.adge.me/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
     """
+    And the output should not contain:
+    """
+![License](http://b.adge.me/:license-mit-blue.svg)](http://doge.mit-license.org)
+    """
+    And the output should not contain:
+    """
+[![Gem Version](http://b.adge.me/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
+    """
 
   Scenario: Generate only a subset of badges
     When I successfully run `badger badge --not travis /tmp/wow_repo`

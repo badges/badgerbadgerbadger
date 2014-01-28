@@ -5,7 +5,7 @@ module Badger
   class CLI < Thor
     desc 'badge', 'Generate badge markdown'
     long_desc <<-LONGDESC
-Generates badges for Github READMEs. The default services are
+Generates badges for Github READMEs. The default services are:
 
     * Travis-ci
 
@@ -20,11 +20,16 @@ Extra badges: currently only one extra badge is supported, a link to the MIT lic
   [![License](http://b.adge.me/:license-mit-blue.svg)](http://doge.mit-license.org)
 
 
+If a gemspec is found, the following badges will also be generated:
+
+    * [License: MIT] badge (presuming an MIT license is specified, linked as above)
+
+    * [Gem version] badge, linking to rubygems.org
+
     LONGDESC
     option :not, desc: 'Exclude these services (comma-separated list)'
     option :only, desc: 'Generate for *only* these services (comma-separated list)'
     option :also, desc: 'Include this extra service (currently only \'mit\')'
-    option :gemspec
 
     def badge dir = '.'
       @badger = Badger.new Git.open(dir).remote.url
@@ -35,7 +40,6 @@ Extra badges: currently only one extra badge is supported, a link to the MIT lic
       spec_file = (Dir.entries dir).select { |i| /gemspec/.match i }[0]
 
       if spec_file
-        f = File.open '/tmp/fuckitall', 'w'
         lines = File.open(File.join(dir, spec_file), 'r').readlines
         @badger.gemspec lines
       end
