@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['pikesley']
   spec.email         = ['sam@pikesley.org']
   spec.description   = %q{Generate Github project badges}
-  spec.summary       = %q{Generate Github project badges}
+  spec.summary       = %q{Badge-Driven Development made easy. Generate a set of Github badges for your project without cutting-n-pasting every time}
   spec.homepage      = 'https://github.com/pikesley/badger'
   spec.license       = 'MIT'
   spec.files         = `git ls-files`.split($/)
