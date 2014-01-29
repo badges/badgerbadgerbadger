@@ -17,7 +17,7 @@ Generates badges for Github READMEs. The default services are:
 
 Extra badges: currently only one extra badge is supported, a link to the MIT license from here: https://github.com/remy/mit-license, e.g.
 
-  [![License](http://b.adge.me/:license-mit-blue.svg)](http://doge.mit-license.org)
+  [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
 
 If a gemspec is found, the following badges will also be generated:
