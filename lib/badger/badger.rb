@@ -101,22 +101,14 @@ module Badger
       @extra_badges << rg
 
       spec_license = (lines.select { |l| /license/.match l })[0].split(/\s/)[-1][1..-2]
-      case spec_license
-        when /mit/i
-          @license = License.new self, spec_license
 
-        when /apache/i
+      @licenses.each_pair do |k, v|
+        if /#{k}/im.match spec_license
           @license = License.new self, spec_license
-
-        when /gpl-2/i
-          @license = License.new self, spec_license
-
-        when /gpl-3/i
-          @license = License.new self, spec_license
+        end
       end
 
       @extra_badges << @license.badge
-      # end
     end
 
     def to_s
