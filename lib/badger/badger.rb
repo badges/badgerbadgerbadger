@@ -8,24 +8,15 @@ module Badger
       @github_slug = github_slug url
       @blacklist   = []
 
-      yaml = YAML.load(
-          File.open(
-              File.join(
-                  File.dirname(__FILE__),
-                  '..',
-                  '..',
-                  'config/services.yaml'
-              )
-          )
-      )
+      @licenses = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/licenses.yaml')))
+      yaml      = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/services.yaml')))
+      @services = yaml['defaults']
+      @extras   = yaml['extras']
+      @config   = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/config.yaml')))
 
-      @services      = yaml['services']['defaults']
-      @extras        = yaml['services']['extras']
-      @licenses      = yaml['services']['licenses']
-      @badge_service = yaml['badge_service']
+      @badge_service = @config['badge_service']
 
       @extra_badges = []
-
     end
 
     def github_slug url

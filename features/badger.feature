@@ -58,16 +58,16 @@ Feature: Badge Robot
 [![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
      """
 
-   Scenario: Generate additional badges
-     When I successfully run `badger badge --also mit /tmp/wow_repo`
-     Then the output should contain:
-     """
-[![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
-[![Coverage Status](http://img.shields.io/coveralls/doge/wow.svg)](https://coveralls.io/r/doge/wow)
-[![Dependency Status](http://img.shields.io/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
-[![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
-     """
+#   Scenario: Generate additional badges
+#     When I successfully run `badger badge --also mit /tmp/wow_repo`
+#     Then the output should contain:
+#     """
+#[![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
+#[![Coverage Status](http://img.shields.io/coveralls/doge/wow.svg)](https://coveralls.io/r/doge/wow)
+#[![Dependency Status](http://img.shields.io/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
+#[![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
+#[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+#     """
 
    @gemspec
    Scenario: Generate badges based on gemspec
@@ -82,14 +82,14 @@ Feature: Badge Robot
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
      """
 
-   @gemspec
-   Scenario: gemspec and --also mit
-     Given I successfully run `badger badge --also mit /tmp/wow_repo`
-     Then the output should not contain:
-     """
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
-     """
+#   @gemspec
+#   Scenario: gemspec and --also mit
+#     Given I successfully run `badger badge --also mit /tmp/wow_repo`
+#     Then the output should not contain:
+#     """
+#[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+#[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+#     """
 
    Scenario: handle a non-git-repo gracefully
      When I run `badger badge /tmp`

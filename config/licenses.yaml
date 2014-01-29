@@ -1,0 +1,17 @@
+mit:
+  url:        http://%s.mit-license.org
+  regex:      The MIT License
+
+apache:
+  url:        http://www.apache.org/licenses/LICENSE-2.0.html
+  regex:      Apache License
+
+gpl-2.0:
+  url:        http://www.gnu.org/licenses/gpl-2.0.html
+  badge_text: gpl2
+  regex:      GNU GENERAL PUBLIC LICENSE.*Version 2
+
+gpl-3.0:
+  url:        http://www.gnu.org/licenses/gpl-3.0.html
+  badge_text: gpl3
+  regex:      GNU GENERAL PUBLIC LICENSE.*Version 3/

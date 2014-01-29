@@ -15,21 +15,27 @@ Generates badges for Github READMEs. The default services are:
 
     * Gemnasium
 
-Extra badges: currently only one extra badge is supported, a link to the MIT license from here: https://github.com/remy/mit-license, e.g.
-
-  [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
-
-
 If a gemspec is found, the following badges will also be generated:
 
     * [License: MIT] badge (presuming an MIT license is specified, linked as above)
 
     * [Gem version] badge, linking to rubygems.org
 
+If a license file is found, a license badge will be generated, for the following licenses:
+
+    * MIT
+
+    * Apache
+
+    * GPL-2
+
+    * GPL-3
+
+Based on
+
     LONGDESC
     option :not, desc: 'Exclude these services (comma-separated list)'
     option :only, desc: 'Generate for *only* these services (comma-separated list)'
-    option :also, desc: 'Include this extra service (currently only \'mit\')'
 
     def badge dir = '.'
       begin
