@@ -2,30 +2,29 @@ require 'yaml'
 
 module Badger
   class Badger
+    attr_reader :licenses, :badge_service
+
     def initialize url
       @github_slug = github_slug url
       @blacklist   = []
 
-      yaml = YAML.load(
-          File.open(
-              File.join(
-                  File.dirname(__FILE__),
-                  '..',
-                  '..',
-                  'config/services.yaml'
-              )
-          )
-      )
+      @licenses = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/licenses.yaml')))
+      yaml      = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/services.yaml')))
+      @services = yaml['defaults']
+      @extras   = yaml['extras']
+      @config   = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/config.yaml')))
 
-      @services      = yaml['services']['defaults']
-      @extras        = yaml['services']['extras']
-      @badge_service = yaml['badge_service']
-      @extra_badges  = []
+      @badge_service = @config['badge_service']
 
+      @extra_badges = []
     end
 
     def github_slug url
       @github_slug ||= /.*github\.com.(.*)\.git/.match(url)[1]
+    end
+
+    def owner
+      @owner ||= @github_slug.split('/')[0]
     end
 
     def badge
@@ -45,6 +44,11 @@ module Badger
       s += @extra_badges
 
       s.uniq
+    end
+
+    def license type
+      @license = License.new self, type
+      @extra_badges << @license.badge
     end
 
     def remove items
@@ -68,20 +72,10 @@ module Badger
       items = [items] unless items.class.name == 'Array'
       s     = ''
       items.each do |item|
-
-        if @extras[item]
-          e = @extras[item]
-
-          owner = @github_slug.split('/')[0]
-          t     = e['url'] % owner
-          s     = "[![%s](http://%s/%s)](%s)" % [
-              e['alt_text'],
-              @badge_service,
-              e['badge_path'],
-              t
-          ]
+        if @licenses[item]
+          @license = License.new self, item
+          s << @license.badge
         end
-
         @extra_badges << s
       end
     end
@@ -97,17 +91,15 @@ module Badger
 
       @extra_badges << rg
 
-      lc      = ''
-      owner   = @github_slug.split('/')[0]
-      license = (lines.select { |l| /license/.match l })[0].split(/\s/)[-1]
-      if /MIT/i.match license
-        lc << "[![License](http://%s/:license-mit-blue.svg)](http://%s.mit-license.org)" % [
-            @badge_service,
-            owner
-        ]
+      spec_license = (lines.select { |l| /license/.match l })[0].split(/\s/)[-1][1..-2]
 
-        @extra_badges << lc
+      @licenses.each_pair do |k, v|
+        if /#{k}/im.match spec_license
+          @license = License.new self, spec_license
+        end
       end
+
+      @extra_badges << @license.badge
     end
 
     def to_s
