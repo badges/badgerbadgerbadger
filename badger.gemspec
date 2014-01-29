@@ -6,6 +6,7 @@ require 'badger/version'
 Gem::Specification.new do |spec|
   spec.name          = 'badgerbadgerbadger'
   spec.version       = Badger::VERSION
+  spec.version       = "#{spec.version}-alpha-#{ENV['TRAVIS_BUILD_NUMBER']}" if ENV['TRAVIS']
   spec.authors       = ['pikesley']
   spec.email         = ['sam@pikesley.org']
   spec.description   = %q{Generate Github project badges}
