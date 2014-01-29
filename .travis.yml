@@ -4,7 +4,7 @@ rvm:
 deploy:
   provider: rubygems
   api_key:
-    secure: JEldPgrZqTywKlgD6apC0uoc9u0LUh0dteNjhbLHVtE25/xumeyilqUCRxJ2mH+ncbiZknKeK/ZdFQcfWKmAKotsav56ZJuj68D1y03wGFnZrTIkhasSoF5X4umYAhMeQoKR7itacf0wpd2xMvddZpCfT5K9xjOwkverZf6CMyg=
+    secure: Fq5ig8hiOsHDA+uC1rWMUTQPljH1hIRzsbWo1aYQxE+ldNXrMjPOtwApTPTeY1lJ2MqZEXONNbH/XTmStGssWc7jl1o0JlprlHIH11kXANpjgkhq4eR30abZLt8+FJdIKpE44fGjk5USVu8xAqqkZxa5/SUbJezBsooFCcsN1Bg=
   gemspec: badger.gemspec
   gem: badgerbadgerbadger
   on:
