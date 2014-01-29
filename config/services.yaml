@@ -26,4 +26,4 @@ services:
       badge_path: ":license-mit-blue.svg"
       url:        http://%s.mit-license.org
 
-badge_service:    b.adge.me
+badge_service:    img.shields.io
