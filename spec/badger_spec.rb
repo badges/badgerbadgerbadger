@@ -81,7 +81,7 @@ module Badger
       end
 
       it 'should generate a GPL3 badge' do
-        @badger.license 'gpl3'
+        @badger.license 'gpl-3.0'
         @badger.badge[4].should == "[![License](http://img.shields.io/:license-gpl3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.html)"
       end
 

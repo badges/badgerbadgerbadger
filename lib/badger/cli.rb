@@ -61,19 +61,23 @@ If a gemspec is found, the following badges will also be generated:
 
       if license_file
         words = File.open(File.join(dir, license_file), 'r').read
-        case words
-          when /mit/i
-            @badger.license 'mit'
-
-          when /apache license/i
-            @badger.license 'apache'
-
-          when /GNU GENERAL PUBLIC LICENSE.*Version 2/im
-            @badger.license 'gpl2'
-
-          when /GNU GENERAL PUBLIC LICENSE.*Version 3/im
-            @badger.license 'gpl3'
-        end
+        @badger.licenses.each_pair do |k, v|
+          if /#{v['regex']}/im.match words
+            @badger.license k
+          end
+#        case words
+#          when /mit/i
+#            @badger.license 'mit'
+#
+#          when /apache license/i
+#            @badger.license 'apache'
+#
+#          when /GNU GENERAL PUBLIC LICENSE.*Version 2/im
+#            @badger.license 'gpl2'
+#
+#          when /GNU GENERAL PUBLIC LICENSE.*Version 3/im
+#            @badger.license 'gpl3'
+3        end
       end
 
       puts @badger.to_s
