@@ -31,7 +31,7 @@ If a license file is found, a license badge will be generated. Currently support
 
     * GPL-3
 
-The supported license are in https://github.com/pikesley/badger/blob/master/config/licenses.yaml, if you're using a different license, send a PR! And if your gemspec license conflicts with your LICENSE file, you should probably fix that.
+The supported license details are in https://github.com/pikesley/badger/blob/master/config/licenses.yaml, if you're using a different license, send a PR! And if your gemspec license conflicts with your LICENSE file, you should probably fix that.
 
 
     LONGDESC
