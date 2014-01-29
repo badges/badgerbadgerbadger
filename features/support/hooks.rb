@@ -18,3 +18,11 @@ Before '@gemspec' do
   f.close
 end
 
+Before '@no-remote' do
+  Git.init '/tmp/not_wow'
+end
+
+After '@no-remote' do
+#  FileUtils.remove_dir '/tmp/not_wow', :force => true
+end
+
