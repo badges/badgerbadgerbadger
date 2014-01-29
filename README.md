@@ -37,7 +37,7 @@ Try
 
     badger help badge
 
-For full usage. 
+for full usage. 
 
 If you're on a Mac, pipe the output into `pbcopy` to add the stuff directly to your clipboard:
 
