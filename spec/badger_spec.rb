@@ -84,6 +84,11 @@ module Badger
         @badger.license 'gpl3'
         @badger.badge[4].should == "[![License](http://img.shields.io/:license-gpl3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.html)"
       end
+
+      it 'should generate nothing for an unknown license' do
+        @badger.license 'doge-license'
+        @badger.badge[4].should == nil
+      end
     end
   end
 end

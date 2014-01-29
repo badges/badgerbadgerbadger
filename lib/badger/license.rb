@@ -2,11 +2,12 @@ module Badger
   class License
     def initialize badger, type
       @badger = badger
-      @type   = type
+      @type   = type.downcase
     end
 
     def badge
-      config = @badger.licenses[@type.downcase]
+      return nil unless config = @badger.licenses[@type]
+
       @url   = config['url']
       if /%s/.match @url
         @url = @url % @badger.owner

@@ -24,7 +24,7 @@ module Badger
       @licenses      = yaml['services']['licenses']
       @badge_service = yaml['badge_service']
 
-      @extra_badges  = []
+      @extra_badges = []
 
     end
 
@@ -81,19 +81,10 @@ module Badger
       items = [items] unless items.class.name == 'Array'
       s     = ''
       items.each do |item|
-
-        if @extras[item]
-          e = @extras[item]
-
-          t = e['url'] % owner
-          s = "[![%s](http://%s/%s)](%s)" % [
-              e['alt_text'],
-              @badge_service,
-              e['badge_path'],
-              t
-          ]
+        if @licenses[item]
+          @license = License.new self, item
+          s << @license.badge
         end
-
         @extra_badges << s
       end
     end
@@ -109,16 +100,23 @@ module Badger
 
       @extra_badges << rg
 
-      lc      = ''
-      license = (lines.select { |l| /license/.match l })[0].split(/\s/)[-1]
-      if /MIT/i.match license
-        lc << "[![License](http://%s/:license-mit-blue.svg)](http://%s.mit-license.org)" % [
-            @badge_service,
-            owner
-        ]
+      spec_license = (lines.select { |l| /license/.match l })[0].split(/\s/)[-1][1..-2]
+      case spec_license
+        when /mit/i
+          @license = License.new self, spec_license
 
-        @extra_badges << lc
+        when /apache/i
+          @license = License.new self, spec_license
+
+        when /gpl-2/i
+          @license = License.new self, spec_license
+
+        when /gpl-3/i
+          @license = License.new self, spec_license
       end
+
+      @extra_badges << @license.badge
+      # end
     end
 
     def to_s
