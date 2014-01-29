@@ -17,11 +17,11 @@ Generates badges for Github READMEs. The default services are:
 
 If a gemspec is found, the following badges will also be generated:
 
-    * [License: MIT] badge (presuming an MIT license is specified, linked as above)
+    * [License] badge, linking to the appropriate license
 
     * [Gem version] badge, linking to rubygems.org
 
-If a license file is found, a license badge will be generated, for the following licenses:
+If a license file is found, a license badge will be generated. Currently supported licenses are:
 
     * MIT
 
@@ -31,7 +31,8 @@ If a license file is found, a license badge will be generated, for the following
 
     * GPL-3
 
-Based on
+The supported license are in https://github.com/pikesley/badger/blob/master/config/licenses.yaml, if you're using a different license, send a PR! And if your gemspec license conflicts with your LICENSE file, you should probably fix that.
+
 
     LONGDESC
     option :not, desc: 'Exclude these services (comma-separated list)'

@@ -1,3 +1,8 @@
+# license_name: - as found in a gemspec
+#   url:        - where the license lives
+#   regex:      - text to look for in the license file
+#   badge-text: - text to use in the generated badge, if different from license_name
+
 mit:
   url:        http://%s.mit-license.org
   regex:      The MIT License
