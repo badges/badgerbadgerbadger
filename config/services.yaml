@@ -26,4 +26,17 @@ services:
       badge_path: ":license-mit-blue.svg"
       url:        http://%s.mit-license.org
 
+  licenses:
+    mit:
+      url:        http://%s.mit-license.org
+
+    apache:
+      url:        http://www.apache.org/licenses/LICENSE-2.0.html
+
+    gpl2:
+      url:        http://www.gnu.org/licenses/gpl-2.0.html
+
+    gpl3:
+      url:        http://www.gnu.org/licenses/gpl-3.0.html
+
 badge_service:    img.shields.io

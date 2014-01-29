@@ -14,6 +14,10 @@ module Badger
       it 'for an ssh url' do
         @badger.github_slug('git@github.com:doge/wow.git').should eql('doge/wow')
       end
+
+      it 'should have the owner' do
+        @badger.owner.should eql 'doge'
+      end
     end
 
     it 'should generate a badge list' do
@@ -62,6 +66,23 @@ module Badger
                         ]
         @badger.badge[4].should == "[![Gem Version](http://img.shields.io/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)"
         @badger.badge[5].should == "[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)"
+      end
+    end
+
+    context 'licenses' do
+      it 'should generate an MIT badge' do
+        @badger.license 'mit'
+        @badger.badge[4].should == "[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)"
+      end
+
+      it 'should generate an Apache badge' do
+        @badger.license 'apache'
+        @badger.badge[4].should == "[![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)"
+      end
+
+      it 'should generate a GPL3 badge' do
+        @badger.license 'gpl3'
+        @badger.badge[4].should == "[![License](http://img.shields.io/:license-gpl3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.html)"
       end
     end
   end
