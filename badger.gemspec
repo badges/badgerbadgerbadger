@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'thor', '~> 0.18'
-  spec.add_dependency 'git'
+  spec.add_dependency 'git', '~> 1.2'
 
   spec.add_development_dependency 'bundler', '~> 1.5'
   spec.add_development_dependency 'rake', '~> 10.1'
@@ -32,5 +32,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'guard-rspec', '~> 4.2'
   spec.add_development_dependency 'guard-cucumber', '~> 1.4'
   spec.add_development_dependency 'coveralls', '~> 0.7'
-  spec.add_development_dependency 'webmock'
+  spec.add_development_dependency 'webmock', '~> 1.17'
 end
