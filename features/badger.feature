@@ -3,23 +3,43 @@ Feature: Badge Robot
   Background:
     Given git remote is "https://github.com/doge/wow.git"
 
-  Scenario: Generate default badges
+  @travis
+  Scenario: Generate travis badge
     When I successfully run `badger badge /tmp/wow_repo`
     Then the output should contain:
     """
 [![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
+    """
+    And the output should not contain:
+    """
 [![Coverage Status](http://img.shields.io/coveralls/doge/wow.svg)](https://coveralls.io/r/doge/wow)
+    """
+    And the output should not contain:
+    """
 [![Dependency Status](http://img.shields.io/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
-[![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
+    """
+
+  @coveralls
+  Scenario: Generate coveralls badge
+    When I successfully run `badger badge /tmp/wow_repo`
+    Then the output should contain:
+    """
+[![Coverage Status](http://img.shields.io/coveralls/doge/wow.svg)](https://coveralls.io/r/doge/wow)
     """
     And the output should not contain:
     """
-![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+[![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
     """
-    And the output should not contain:
-    """
-[![Gem Version](http://img.shields.io/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
-    """
+
+
+
+
+
+
+
+
+
+
 
   Scenario: Generate only a subset of badges
     When I successfully run `badger badge --not travis /tmp/wow_repo`

@@ -1,27 +1,25 @@
 module Badger
   class License
-    def initialize badger, type
-      @badger = badger
-      @type   = type.downcase
-    end
+    @@licenses      = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/licenses.yaml')))
+    @@config        = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/config.yaml')))
+    @@badge_service = @@config['badge_service']
 
-    def badge
-      return nil unless config = @badger.licenses[@type]
+    def self.badge type, owner
+      type.downcase!
+      return nil unless params = @@licenses[type]
 
-      @url   = config['url']
-      if /%s/.match @url
-        @url = @url % @badger.owner
+      url = params['url']
+      if /%s/.match url
+        url = url % owner
       end
 
-      badge_text = @type unless badge_text = config['badge_text']
+      badge_text = type unless badge_text = params['badge_text']
 
-      s = "[![License](http://%s/:license-%s-blue.svg)](%s)" % [
-          @badger.badge_service,
+      "[![License](http://%s/:license-%s-blue.svg)](%s)" % [
+          @@badge_service,
           badge_text,
-          @url
+          url
       ]
-
-      s
     end
   end
 end

@@ -26,6 +26,16 @@ After '@no-remote' do
   FileUtils.remove_dir '/tmp/not_wow', :force => true
 end
 
+Before '@travis' do
+  FileUtils.touch '/tmp/wow_repo/.travis.yml'
+end
+
+Before '@coveralls' do
+  f = File.open '/tmp/wow_repo/Gemfile', 'w'
+  f.write 'gem "coveralls"'
+  f.close
+end
+
 Before '@mit' do
   f = File.open '/tmp/wow_repo/LICENSE.md', 'w'
   f.write "The MIT License (MIT)\n"

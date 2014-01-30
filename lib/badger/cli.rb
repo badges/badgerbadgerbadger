@@ -3,6 +3,7 @@ require 'badger'
 
 module Badger
   class CLI < Thor
+
     desc 'badge', 'Generate badge markdown'
     long_desc <<-LONGDESC
 Generates badges for Github READMEs. The default services are:
@@ -35,8 +36,6 @@ The supported license details are in https://github.com/pikesley/badger/blob/mas
 
 
     LONGDESC
-    option :not, desc: 'Exclude these services (comma-separated list)'
-    option :only, desc: 'Generate for *only* these services (comma-separated list)'
 
     def badge dir = '.'
       begin
@@ -53,31 +52,45 @@ The supported license details are in https://github.com/pikesley/badger/blob/mas
       end
       @badger = Badger.new @r
 
-      @badger.remove options[:not].split(',') if options[:not]
-      @badger.only options[:only].split(',') if options[:only]
-      @badger.also options[:also].split(',') if options[:also]
+      @badger.add 'travis' if Badger.has_travis?(dir)
 
-      spec_file = (Dir.entries dir).select { |i| /gemspec/.match i }[0]
-
-      if spec_file
-        lines = File.open(File.join(dir, spec_file), 'r').readlines
-        @badger.gemspec lines
+      targets = []
+      targets += (Dir.entries dir).select { |i| /Gemfile/.match i }
+      targets += (Dir.entries dir).select { |i| /gemspec/.match i }
+      lines   = []
+      targets.each do |target|
+        lines += File.open(File.join(dir, target)).readlines
       end
 
-      license_file = (Dir.entries dir).select { |i| /LICENSE/i.match i }[0]
+      @badger.add 'coveralls' if Badger.has_coveralls? dir
 
-      if license_file
-        words = File.open(File.join(dir, license_file), 'r').read
-        @badger.licenses.each_pair do |k, v|
-          if /#{v['regex']}/im.match words
-            @badger.license k
-          end
-        end
-      end
+#      @badger.remove options[:not].split(',') if options[:not]
+#      @badger.only options[:only].split(',') if options[:only]
+#      @badger.also options[:also].split(',') if options[:also]
+
+
+#      spec_file = (Dir.entries dir).select { |i| /gemspec/.match i }[0]
+
+#      if spec_file
+#        lines = File.open(File.join(dir, spec_file), 'r').readlines
+#        @badger.gemspec lines
+#      end
+
+#      license_file = (Dir.entries dir).select { |i| /LICENSE/i.match i }[0]
+
+#      if license_file
+#        words = File.open(File.join(dir, license_file), 'r').read
+#        @badger.licenses.each_pair do |k, v|
+#          if /#{v['regex']}/im.match words
+#            @badger.license k
+#          end
+#        end
+#      end
 
       puts @badger.to_s
     end
 
     default_task :badge
+
   end
 end
