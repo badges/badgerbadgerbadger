@@ -9,10 +9,10 @@ module Badger
     targets += (Dir.entries dir).select { |i| /gemspec/.match i }
     lines   = []
     targets.each do |target|
-      lines += File.open(File.join(dir, target)).readlines
+      lines += File.readlines(File.join(dir, target))
     end
 
-    lines.grep('coveralls').any?
+    lines.grep(/coveralls/).any?
   end
 
 end
