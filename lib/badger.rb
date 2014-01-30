@@ -1,4 +1,5 @@
 require 'git'
+require 'thor'
 
 require 'badger/version'
 require 'badger/config'
@@ -8,6 +9,3 @@ require 'badger/license'
 require 'badger/rubygem'
 require 'badger/helpers'
 
-module Badger
-
-end

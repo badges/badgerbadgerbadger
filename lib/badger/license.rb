@@ -1,10 +1,8 @@
 module Badger
   class License
-    @@licenses      = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/licenses.yaml')))
-
     def self.badge type, owner
       type = type.downcase
-      return nil unless params = @@licenses[type]
+      return nil unless params = Config.instance.licenses[type]
 
       url = params['url']
       if /%s/.match url

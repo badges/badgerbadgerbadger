@@ -1,4 +1,3 @@
-require 'thor'
 require 'badger'
 
 module Badger
@@ -49,12 +48,12 @@ The supported license details are in https://github.com/pikesley/badger/blob/mas
         puts 'This repo does not appear to have a github remote'
         exit 2
       end
+
       @badger = Badger.new @r
 
       @badger.add 'travis' if Badger.has_travis? dir
       @badger.add 'gemnasium' if Badger.has_gemfile? dir
       @badger.add 'coveralls' if Badger.has_coveralls? dir
-
       @badger.add 'codeclimate' if @badger.any?
 
       if gemspec_params = Badger.search_gemspec(dir)

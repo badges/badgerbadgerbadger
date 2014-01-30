@@ -28,7 +28,7 @@ module Badger
 
     if license_file
       words = File.open(File.join(dir, license_file), 'r').read
-      License.licenses.each_pair do |k, v|
+      Config.instance.licenses.each_pair do |k, v|
         if /#{v['regex']}/im.match words
           return k
         end
@@ -40,7 +40,6 @@ module Badger
 
   def Badger.search_gemspec dir
     spec_file = (Dir.entries dir).select { |i| /gemspec/.match i }[0]
-    params    = nil
 
     if spec_file
       params           = {}
@@ -49,6 +48,6 @@ module Badger
       params[:license] = (gs.grep /\.license /)[0].split('=')[-1].strip[1..-2]
     end
 
-    params
+    params || nil
   end
 end
