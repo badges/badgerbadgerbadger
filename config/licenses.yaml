@@ -19,4 +19,4 @@ gpl-2.0:
 gpl-3.0:
   url:        http://www.gnu.org/licenses/gpl-3.0.html
   badge_text: gpl3
-  regex:      GNU GENERAL PUBLIC LICENSE.*Version 3/
+  regex:      GNU GENERAL PUBLIC LICENSE.*Version 3
