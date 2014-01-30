@@ -1,4 +1,4 @@
-Feature: Badge Robot
+Feature: Get license badges
 
   Background:
     Given git remote is "https://github.com/doge/wow.git"
@@ -43,3 +43,5 @@ GPL
     """
 MIT
     """
+
+  Scenario: Attempt to generate an unknown license type

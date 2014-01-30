@@ -58,33 +58,18 @@ The supported license details are in https://github.com/pikesley/badger/blob/mas
 
       @badger.add 'codeclimate' if @badger.any?
 
-#      @badger.remove options[:not].split(',') if options[:not]
-#      @badger.only options[:only].split(',') if options[:only]
-#      @badger.also options[:also].split(',') if options[:also]
+      if gemspec_params = Badger.search_gemspec(dir)
+        @badger.rubygem gemspec_params[:rubygem]
+        @badger.license gemspec_params[:license]
+      end
 
-
-#      spec_file = (Dir.entries dir).select { |i| /gemspec/.match i }[0]
-
-#      if spec_file
-#        lines = File.open(File.join(dir, spec_file), 'r').readlines
-#        @badger.gemspec lines
-#      end
-
-#      license_file = (Dir.entries dir).select { |i| /LICENSE/i.match i }[0]
-
-#      if license_file
-#        words = File.open(File.join(dir, license_file), 'r').read
-#        @badger.licenses.each_pair do |k, v|
-#          if /#{v['regex']}/im.match words
-#            @badger.license k
-#          end
-#        end
-#      end
+      if license_type = Badger.find_license(dir)
+        @badger.license license_type
+      end
 
       puts @badger.to_s
     end
 
     default_task :badge
-
   end
 end

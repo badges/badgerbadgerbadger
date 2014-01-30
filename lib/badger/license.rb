@@ -5,7 +5,7 @@ module Badger
     @@badge_service = @@config['badge_service']
 
     def self.badge type, owner
-      type.downcase!
+      type = type.downcase
       return nil unless params = @@licenses[type]
 
       url = params['url']
@@ -20,6 +20,10 @@ module Badger
           badge_text,
           url
       ]
+    end
+
+    def self.licenses
+      @@licenses
     end
   end
 end
