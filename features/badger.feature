@@ -19,6 +19,14 @@ Feature: Badge Robot
 [![Dependency Status](http://img.shields.io/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
     """
 
+  @gemnasium
+  Scenario: Generate gemnasium badge
+    When I successfully run `badger badge /tmp/wow_repo`
+    Then the output should contain:
+    """
+[![Dependency Status](http://img.shields.io/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
+   """
+
   @coveralls
   Scenario: Generate coveralls badge
     When I successfully run `badger badge /tmp/wow_repo`
@@ -30,7 +38,6 @@ Feature: Badge Robot
     """
 [![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
     """
-
 
 
 

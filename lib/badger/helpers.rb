@@ -3,6 +3,14 @@ module Badger
     ((Dir.entries dir).select { |i| '.travis.yml' == i }).any?
   end
 
+  def Badger.has_gemfile? dir
+    targets = []
+    targets += (Dir.entries dir).select { |i| /Gemfile/.match i }
+    targets += (Dir.entries dir).select { |i| /gemspec/.match i }
+
+    targets.any?
+  end
+
   def Badger.has_coveralls? dir
     targets = []
     targets += (Dir.entries dir).select { |i| /Gemfile/.match i }
@@ -14,5 +22,4 @@ module Badger
 
     lines.grep(/coveralls/).any?
   end
-
 end

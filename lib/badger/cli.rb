@@ -52,16 +52,8 @@ The supported license details are in https://github.com/pikesley/badger/blob/mas
       end
       @badger = Badger.new @r
 
-      @badger.add 'travis' if Badger.has_travis?(dir)
-
-      targets = []
-      targets += (Dir.entries dir).select { |i| /Gemfile/.match i }
-      targets += (Dir.entries dir).select { |i| /gemspec/.match i }
-      lines   = []
-      targets.each do |target|
-        lines += File.open(File.join(dir, target)).readlines
-      end
-
+      @badger.add 'travis' if Badger.has_travis? dir
+      @badger.add 'gemnasium' if Badger.has_gemfile? dir
       @badger.add 'coveralls' if Badger.has_coveralls? dir
 
 #      @badger.remove options[:not].split(',') if options[:not]
