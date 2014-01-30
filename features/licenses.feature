@@ -44,4 +44,10 @@ GPL
 MIT
     """
 
+  @license @doge-license
   Scenario: Attempt to generate an unknown license type
+    When I successfully run `badger badge /tmp/wow_repo`
+    Then the output should not contain:
+    """
+License
+    """

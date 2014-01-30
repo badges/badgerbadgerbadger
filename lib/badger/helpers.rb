@@ -34,15 +34,17 @@ module Badger
         end
       end
     end
+
+    nil
   end
 
   def Badger.search_gemspec dir
     spec_file = (Dir.entries dir).select { |i| /gemspec/.match i }[0]
-    params = nil
+    params    = nil
 
     if spec_file
-      params = {}
-      gs = File.readlines(File.join(dir, spec_file))
+      params           = {}
+      gs               = File.readlines(File.join(dir, spec_file))
       params[:rubygem] = (gs.grep /\.name /)[0].split('=')[-1].strip[1..-2]
       params[:license] = (gs.grep /\.license /)[0].split('=')[-1].strip[1..-2]
     end

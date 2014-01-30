@@ -1,4 +1,4 @@
-Feature: Get service badges
+Feature: Badge robot
 
   Background:
     Given git remote is "https://github.com/doge/wow.git"

@@ -6,23 +6,23 @@ module Badger
 
     desc 'badge', 'Generate badge markdown'
     long_desc <<-LONGDESC
-Generates badges for Github READMEs. The default services are:
+Highly-opinionated badge generator for Github READMEs:
 
-    * Travis-ci
+    * If it finds a .travis.yml, it generates a Travis-CI Build-Status Badge
 
-    * Code Climate
+    * If it finds a Gemfile or a gemspec, it generates a Gemnasium Dependency Status Badge
 
-    * Coveralls
+    * If it finds 'coveralls' in a Gemfile or gemspec, it generates a Coveralls Coverage Status Badge
 
-    * Gemnasium
+    * If it's generated at least one of the above, it generates a Code Climate Status Badge
 
-If a gemspec is found, the following badges will also be generated:
+In addition, if it finds a gemspec, it will use it to generate:
 
-    * [License] badge, linking to the appropriate license
+    * A Rubygems Version Badge
 
-    * [Gem version] badge, linking to rubygems.org
+    * A License Badge
 
-If a license file is found, a license badge will be generated. Currently supported licenses are:
+And if a license file is found, a License Badge will be generated. Currently supported licenses are:
 
     * MIT
 
@@ -33,7 +33,6 @@ If a license file is found, a license badge will be generated. Currently support
     * GPL-3
 
 The supported license details are in https://github.com/pikesley/badger/blob/master/config/licenses.yaml, if you're using a different license, send a PR! And if your gemspec license conflicts with your LICENSE file, you should probably fix that.
-
 
     LONGDESC
 

@@ -24,3 +24,9 @@ Before '@gpl3' do
   f.write "Version 3\n"
   f.close
 end
+
+Before '@doge-license' do
+  f = File.open '/tmp/wow_repo/LICENSE.md', 'w'
+  f.write "WOW SUCH LICENSE\n"
+  f.close
+end
