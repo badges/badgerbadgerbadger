@@ -7,7 +7,7 @@
 
 #Badger
 
-Because I grow weary of copy-n-pasting the badge URLs into the README of every project, and the [b.adge.me](http://b.adge.me) API now supports all of the services I use
+Because I grow weary of copy-n-pasting the badge URLs into the README of every project, and the [img.shields.io](http://img.shields.io) API now supports all of the services I use 
 
 ##Usage
 
@@ -30,14 +30,13 @@ Then
     [![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg)](https://rubygems.org/gems/badgerbadgerbadger)
     [![License](http://img.shields.io/:license-mit-blue.svg)](http://pikesley.mit-license.org)
 
-    
 ready to paste into the top of your README (with the correct URLs for your repo (hopefully)).
 
 Try
 
     badger help badge
 
-for full usage. 
+to read about Badger's Opinions 
 
 If you're on a Mac, pipe the output into `pbcopy` to add the stuff directly to your clipboard:
 

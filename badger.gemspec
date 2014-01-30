@@ -27,10 +27,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec-pride', '~> 2.3'
   spec.add_development_dependency 'cucumber', '~> 1.3'
   spec.add_development_dependency 'aruba', '~> 0.5'
-#  spec.add_development_dependency 'aruba-doubles', '~> 1.2'
   spec.add_development_dependency 'guard', '~> 2.3'
   spec.add_development_dependency 'guard-rspec', '~> 4.2'
   spec.add_development_dependency 'guard-cucumber', '~> 1.4'
+  spec.add_development_dependency 'terminal-notifier-guard'
   spec.add_development_dependency 'coveralls', '~> 0.7'
   spec.add_development_dependency 'webmock', '~> 1.17'
 end

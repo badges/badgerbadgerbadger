@@ -1,4 +1,4 @@
-Feature: Badge Robot
+Feature: Get license badges
 
   Background:
     Given git remote is "https://github.com/doge/wow.git"
@@ -42,4 +42,12 @@ GPL
     And the output should not contain:
     """
 MIT
+    """
+
+  @license @doge-license
+  Scenario: Attempt to generate an unknown license type
+    When I successfully run `badger badge /tmp/wow_repo`
+    Then the output should not contain:
+    """
+License
     """

@@ -1,42 +1,39 @@
-require 'thor'
 require 'badger'
 
 module Badger
   class CLI < Thor
+
     desc 'badge', 'Generate badge markdown'
     long_desc <<-LONGDESC
-Generates badges for Github READMEs. The default services are:
+Highly-opinionated badge generator for Github READMEs:
 
-    * Travis-ci
+* If it finds a .travis.yml, it generates a Travis-CI Build-Status Badge
 
-    * Code Climate
+* If it finds a Gemfile or a gemspec, it generates a Gemnasium Dependency Status Badge
 
-    * Coveralls
+* If it finds 'coveralls' in a Gemfile or gemspec, it generates a Coveralls Coverage Status Badge
 
-    * Gemnasium
+* If it's generated at least one of the above, it generates a Code Climate Status Badge
 
-If a gemspec is found, the following badges will also be generated:
+In addition, if it finds a gemspec, it will use it to generate:
 
-    * [License] badge, linking to the appropriate license
+* A Rubygems Version Badge
 
-    * [Gem version] badge, linking to rubygems.org
+* A License Badge
 
-If a license file is found, a license badge will be generated. Currently supported licenses are:
+And if a license file is found, a License Badge will be generated. Currently supported licenses are:
 
-    * MIT
+* MIT
 
-    * Apache
+* Apache
 
-    * GPL-2
+* GPL-2
 
-    * GPL-3
+* GPL-3
 
 The supported license details are in https://github.com/pikesley/badger/blob/master/config/licenses.yaml, if you're using a different license, send a PR! And if your gemspec license conflicts with your LICENSE file, you should probably fix that.
 
-
     LONGDESC
-    option :not, desc: 'Exclude these services (comma-separated list)'
-    option :only, desc: 'Generate for *only* these services (comma-separated list)'
 
     def badge dir = '.'
       begin
@@ -51,28 +48,21 @@ The supported license details are in https://github.com/pikesley/badger/blob/mas
         puts 'This repo does not appear to have a github remote'
         exit 2
       end
+
       @badger = Badger.new @r
 
-      @badger.remove options[:not].split(',') if options[:not]
-      @badger.only options[:only].split(',') if options[:only]
-      @badger.also options[:also].split(',') if options[:also]
+      @badger.add 'travis' if Badger.has_travis? dir
+      @badger.add 'gemnasium' if Badger.has_gemfile? dir
+      @badger.add 'coveralls' if Badger.has_coveralls? dir
+      @badger.add 'codeclimate' if @badger.any?
 
-      spec_file = (Dir.entries dir).select { |i| /gemspec/.match i }[0]
-
-      if spec_file
-        lines = File.open(File.join(dir, spec_file), 'r').readlines
-        @badger.gemspec lines
+      if gemspec_params = Badger.search_gemspec(dir)
+        @badger.rubygem gemspec_params[:rubygem]
+        @badger.license gemspec_params[:license]
       end
 
-      license_file = (Dir.entries dir).select { |i| /LICENSE/i.match i }[0]
-
-      if license_file
-        words = File.open(File.join(dir, license_file), 'r').read
-        @badger.licenses.each_pair do |k, v|
-          if /#{v['regex']}/im.match words
-            @badger.license k
-          end
-        end
+      if license_type = Badger.find_license(dir)
+        @badger.license license_type
       end
 
       puts @badger.to_s

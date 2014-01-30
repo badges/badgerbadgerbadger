@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
 
 require 'badger/cli'
-
 Badger::CLI.start

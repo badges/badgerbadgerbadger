@@ -5,7 +5,7 @@
 
 mit:
   url:        http://%s.mit-license.org
-  regex:      The MIT License
+  regex:      MIT License
 
 apache:
   url:        http://www.apache.org/licenses/LICENSE-2.0.html
