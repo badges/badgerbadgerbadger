@@ -10,7 +10,7 @@ Before '@gemspec' do
   end
 EOF
 
-  f = File.open '/tmp/wow_repo/suchgem.gemspec', 'w'
+  f = File.open "#{$temp_repo}/suchgem.gemspec", 'w'
   f.write fakespec
   f.close
 end

@@ -1,9 +1,9 @@
 Before do
-  FileUtils.mkpath '/tmp/wow_repo'
+  FileUtils.mkpath $temp_repo
 end
 
 After do
-  FileUtils.remove_dir '/tmp/wow_repo', :force => true
+  FileUtils.remove_dir $temp_repo, :force => true
 end
 
 Before '@no-remote' do

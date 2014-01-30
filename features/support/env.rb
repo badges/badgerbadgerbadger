@@ -8,4 +8,4 @@ Coveralls.wear_merged!
 
 require 'badger/badger'
 
-@temp_dir = '/tmp/wow_repo'
+$temp_repo = '/tmp/wow_repo'
