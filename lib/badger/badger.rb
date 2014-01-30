@@ -41,6 +41,9 @@ module Badger
       self << Rubygem.badge(name)
     end
 
+#    def any?
+#      self.length > 0
+#    end
 #    def badge
 #      s = []
 #      @services.each_pair do |k, h|

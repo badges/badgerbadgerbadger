@@ -40,6 +40,10 @@ Before '@coveralls' do
   f.close
 end
 
+Before '@codeclimate' do
+  FileUtils.touch '/tmp/wow_repo/.travis.yml'
+end
+
 Before '@mit' do
   f = File.open '/tmp/wow_repo/LICENSE.md', 'w'
   f.write "The MIT License (MIT)\n"

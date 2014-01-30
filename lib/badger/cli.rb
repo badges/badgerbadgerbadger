@@ -56,6 +56,8 @@ The supported license details are in https://github.com/pikesley/badger/blob/mas
       @badger.add 'gemnasium' if Badger.has_gemfile? dir
       @badger.add 'coveralls' if Badger.has_coveralls? dir
 
+      @badger.add 'codeclimate' if @badger.any?
+
 #      @badger.remove options[:not].split(',') if options[:not]
 #      @badger.only options[:only].split(',') if options[:only]
 #      @badger.also options[:also].split(',') if options[:also]
