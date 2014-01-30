@@ -1,11 +1,17 @@
 require 'yaml'
+require 'singleton'
 
 module Badger
-#  @@config = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/config.yaml')))
+  class Config
 
-  def Badger.badge_service
-    config = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/config.yaml')))
+    include Singleton
 
-    config['badge_service']
+    def initialize
+      @config = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/config.yaml')))
+    end
+
+    def badge_service
+      @config['badge_service']
+    end
   end
 end
