@@ -18,6 +18,10 @@ Feature: Get service badges
     """
 [![Dependency Status](http://img.shields.io/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
     """
+    And the output should not contain:
+    """
+[![Gem Version](http://img.shields.io/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
+    """
 
   @gemnasium
   Scenario: Generate gemnasium badge
