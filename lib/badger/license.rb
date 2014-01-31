@@ -5,7 +5,7 @@ module Badger
       return nil unless params = Config.instance.licenses[type]
 
       target_url = params['url']
-      if /%s/.match target_url
+      if target_url =~ /%s/
         target_url = target_url % owner
       end
 

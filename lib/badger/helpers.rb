@@ -16,20 +16,24 @@ module Badger
     lines.grep(/coveralls/).any?
   end
 
+  def Badger.spec_files dir
+    (Dir.entries dir).select { |i| i =~ /gemspec/ }
+  end
+
   def Badger.gemfiles dir
     targets = []
-    targets += (Dir.entries dir).select { |i| /Gemfile/.match i }
-    targets += (Dir.entries dir).select { |i| /gemspec/.match i }
+    targets += (Dir.entries dir).select { |i| i =~ /Gemfile/ }
+    targets += spec_files dir
     targets
   end
 
   def Badger.find_license dir
-    license_file = (Dir.entries dir).select { |i| /LICENSE/i.match i }[0]
+    license_file = (Dir.entries dir).select { |i| i =~ /LICENSE/ }[0]
 
     if license_file
       words = File.open(File.join(dir, license_file), 'r').read
       Config.instance.licenses.each_pair do |k, v|
-        if /#{v['regex']}/im.match words
+        if words =~ /#{v['regex']}/im
           return k
         end
       end
@@ -39,8 +43,9 @@ module Badger
   end
 
   def Badger.search_gemspec dir
-    spec_file = (Dir.entries dir).select { |i| /gemspec/.match i }[0]
+    spec_file = spec_files(dir)[0]
 
+    # I wanted to eval the gemspec but that broke *everything*
     if spec_file
       params           = {}
       gs               = File.readlines(File.join(dir, spec_file))
