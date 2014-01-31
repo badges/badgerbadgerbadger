@@ -30,16 +30,7 @@ module Badger
 
     def bonus
       self.uniq!
-
-      badge_url = 'http://%s/:badges-%d/%d-%s.svg' % [
-          Config.instance.config['badge_service'],
-          self.length + 1,
-          self.length + 1,
-          Config.instance.config['bonus_badge_colour']
-      ]
-      target_url = 'http://%s' % Config.instance.config['badge_service
-']
-      self << Badger.badge('Badges', badge_url, target_url)
+      self << Bonus.badge(self)
     end
 
     def to_s

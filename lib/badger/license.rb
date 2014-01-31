@@ -18,9 +18,5 @@ module Badger
 
       Badger.badge 'License', badge_url, target_url
     end
-
- #   def self.licenses
- #     @@licenses
- #   end
   end
 end

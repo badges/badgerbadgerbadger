@@ -9,4 +9,5 @@ require 'badger/license'
 require 'badger/rubygem'
 require 'badger/helpers'
 require 'badger/badge'
+require 'badger/bonus'
 
