@@ -31,12 +31,14 @@ module Badger
     def bonus
       self.uniq!
 
-      badge_url = 'http://img.shields.io/:badges-%d/%d-%s.svg' % [
+      badge_url = 'http://%s/:badges-%d/%d-%s.svg' % [
+          Config.instance.config['badge_service'],
           self.length + 1,
           self.length + 1,
           Config.instance.config['bonus_badge_colour']
       ]
-      target_url = 'http://img.shields.io'
+      target_url = 'http://%s' % Config.instance.config['badge_service
+']
       self << Badger.badge('Badges', badge_url, target_url)
     end
 
