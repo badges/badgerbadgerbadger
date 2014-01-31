@@ -1,4 +1,4 @@
-# license_name: - as found in a gemspec
+# license_name: - as found in a gemspec (but downcased)
 #   url:        - where the license lives
 #   regex:      - text to look for in the license file
 #   badge-text: - text to use in the generated badge, if different from license_name

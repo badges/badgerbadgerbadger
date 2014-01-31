@@ -58,7 +58,9 @@ The supported license details are in https://github.com/pikesley/badger/blob/mas
 
       if gemspec_params = Badger.search_gemspec(dir)
         @badger.rubygem gemspec_params[:rubygem]
-        @badger.license gemspec_params[:license]
+        gemspec_params[:licenses].each do |license_type|
+          @badger.license license_type
+        end
       end
 
       if license_type = Badger.find_license(dir)
