@@ -44,6 +44,14 @@ GPL
 MIT
     """
 
+  @license @gpl3
+  Scenario: Generate GPL3 license
+    When I successfully run `badger badge /tmp/wow_repo`
+    Then the output should contain:
+    """
+![License](http://img.shields.io/:license-gpl3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.html)
+    """
+
   @license @doge-license
   Scenario: Attempt to generate an unknown license type
     When I successfully run `badger badge /tmp/wow_repo`
