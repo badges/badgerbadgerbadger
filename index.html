@@ -3,37 +3,41 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
     <title>Badger by pikesley</title>
   </head>
 
   <body>
-    <header>
+    <div id="container">
       <div class="inner">
-        <h1>Badger</h1>
-        <h2>Generate Github project badges the easy way</h2>
-        <a href="https://github.com/pikesley/badger" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
+        <header>
+          <h1>Badger</h1>
+          <h2>Generate Github project badges the easy way</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/pikesley/badger/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/pikesley/badger/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/pikesley/badger" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
           <p><a href="https://travis-ci.org/pikesley/badger"><img src="http://img.shields.io/travis/pikesley/badger.svg" alt="Build Status"></a>
-<a href="https://coveralls.io/r/pikesley/badger"><img src="http://img.shields.io/coveralls/pikesley/badger.svg" alt="Coverage Status"></a>
 <a href="https://gemnasium.com/pikesley/badger"><img src="http://img.shields.io/gemnasium/pikesley/badger.svg" alt="Dependency Status"></a>
+<a href="https://coveralls.io/r/pikesley/badger"><img src="http://img.shields.io/coveralls/pikesley/badger.svg" alt="Coverage Status"></a>
 <a href="https://codeclimate.com/github/pikesley/badger"><img src="http://img.shields.io/codeclimate/github/pikesley/badger.svg" alt="Code Climate"></a>
 <a href="https://rubygems.org/gems/badgerbadgerbadger"><img src="http://img.shields.io/gem/v/badgerbadgerbadger.svg" alt="Gem Version"></a>
-<a href="http://pikesley.mit-license.org"><img src="http://img.shields.io/:license-mit-blue.svg" alt="License"></a></p>
+<a href="http://pikesley.mit-license.org"><img src="http://img.shields.io/:license-mit-blue.svg" alt="License"></a>
+<a href="http://img.shields.io"><img src="http://img.shields.io/:badges-7/7-ff6799.svg" alt="Badges"></a></p>
 
 <h1>
 <a name="badger" class="anchor" href="#badger"><span class="octicon octicon-link"></span></a>Badger</h1>
@@ -57,15 +61,16 @@ bundle
 <p>Then</p>
 
 <pre><code>badger badge
-[![Build Status](http://img.shields.io/travis/pikesley/badger.svg)](https://travis-ci.org/pikesley/badger)
-[![Coverage Status](http://img.shields.io/coveralls/pikesley/badger.svg)](https://coveralls.io/r/pikesley/badger)
-[![Dependency Status](http://img.shields.io/gemnasium/pikesley/badger.svg)](https://gemnasium.com/pikesley/badger)
-[![Code Climate](http://img.shields.io/codeclimate/github/pikesley/badger.svg)](https://codeclimate.com/github/pikesley/badger)
-[![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg)](https://rubygems.org/gems/badgerbadgerbadger)
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://pikesley.mit-license.org)
+[![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
+[![Dependency Status](http://img.shields.io/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
+[![Coverage Status](http://img.shields.io/coveralls/doge/wow.svg)](https://coveralls.io/r/doge/wow)
+[![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
+[![Gem Version](http://img.shields.io/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+[![Badges](http://img.shields.io/:badges-7/7-ff6799.svg)](http://img.shields.io) 
 </code></pre>
 
-<p>ready to paste into the top of your README (with the correct URLs for your repo (hopefully)).</p>
+<p>ready to paste into the top of your README (with the correct URLs for your repo)</p>
 
 <p>Try</p>
 
@@ -89,23 +94,23 @@ rake
 </code></pre>
         </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/pikesley/badger/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/pikesley/badger/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+        <footer>
+          Badger is maintained by <a href="https://github.com/pikesley">pikesley</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
 
-          <p class="repo-owner"><a href="https://github.com/pikesley/badger"></a> is maintained by <a href="https://github.com/pikesley">pikesley</a>.</p>
+                  <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-20895204-13");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
       </div>
     </div>
-
-  
   </body>
 </html>
