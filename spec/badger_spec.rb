@@ -6,8 +6,10 @@ module Badger
       @badger = Badger.new "https://github.com/doge/wow.git"
     end
 
-    it 'should have no badges by default' do
-      @badger.length.should == 0
+    context 'initialisation' do
+      it 'should have no badges by default' do
+        @badger.length.should == 0
+      end
     end
 
     context 'get the user and repo' do
@@ -15,12 +17,13 @@ module Badger
         @badger.github_slug.should eql('doge/wow')
       end
 
-      it 'extracts from an ssh url' do
-        @badger.github_slug.should eql('doge/wow')
-      end
-
       it 'extracts the owner' do
         @badger.owner.should eql 'doge'
+      end
+
+      it 'extracts from an ssh url' do
+        @badger = Badger.new "git@github.com:doge/wow.git"
+        @badger.github_slug.should eql('doge/wow')
       end
     end
 
@@ -86,7 +89,7 @@ module Badger
         @badger.add 'codeclimate'
         @badger.license 'mit'
         @badger.to_s.should ==
-%{[![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
+            %{[![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
 [![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 }
