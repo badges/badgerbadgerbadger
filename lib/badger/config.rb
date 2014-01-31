@@ -20,8 +20,8 @@ module Badger
       @licenses
     end
 
-    def badge_service
-      @config['badge_service']
+    def config
+      @config
     end
   end
 end

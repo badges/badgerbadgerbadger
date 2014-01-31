@@ -1,11 +1,16 @@
 module Badger
   class Rubygem
     def self.badge name
-      "[![Gem Version](http://%s/gem/v/%s.svg)](https://rubygems.org/gems/%s)" % [
-          Config.instance.badge_service,
-          name,
+      badge_url = 'http://%s/gem/v/%s.svg' % [
+          Config.instance.config['badge_service'],
           name
       ]
+
+      target_url = 'https://rubygems.org/gems/%s' % [
+          name
+      ]
+
+      Badger.badge 'Gem Version', badge_url, target_url
     end
   end
 end
