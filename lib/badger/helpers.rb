@@ -10,8 +10,7 @@ module Badger
   end
 
   def Badger.git_remote dir
-    repo = is_repo? dir
-    remote = repo.remote.url
+    remote = is_repo?(dir).remote.url
     if remote.nil?
       puts 'This repo does not appear to have a github remote'
       exit 2
