@@ -54,6 +54,7 @@ The supported license details are in https://github.com/pikesley/badger/blob/mas
         @badger.license license_type
       end
 
+      @badger.bonus
       puts @badger.to_s
     end
 

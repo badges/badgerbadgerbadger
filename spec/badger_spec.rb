@@ -83,6 +83,15 @@ module Badger
       end
     end
 
+    context 'bonus badge' do
+      it 'should have a badges badge' do
+        @badger.add 'travis'
+        @badger.add 'coveralls'
+        @badger.bonus
+        @badger[2].should == "[![Badges](http://img.shields.io/:badges-3/3-ff6799.svg)](http://img.shields.io)"
+      end
+    end
+
     context 'output' do
       it 'should produce some lines of text' do
         @badger.add 'travis'

@@ -28,6 +28,18 @@ module Badger
       self << Rubygem.badge(name)
     end
 
+    def bonus
+      self.uniq!
+
+      badge_url = 'http://img.shields.io/:badges-%d/%d-%s.svg' % [
+          self.length + 1,
+          self.length + 1,
+          Config.instance.config['bonus_badge_colour']
+      ]
+      target_url = 'http://img.shields.io'
+      self << Badger.badge('Badges', badge_url, target_url)
+    end
+
     def to_s
       self.uniq!
 
