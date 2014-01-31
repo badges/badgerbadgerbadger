@@ -1,2 +1,3 @@
-badge_service:    img.shields.io
-license_colour:   blue
+badge_service:      img.shields.io
+license_colour:     blue
+bonus_badge_colour: ff6799
