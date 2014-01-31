@@ -4,18 +4,19 @@ module Badger
       type = type.downcase
       return nil unless params = Config.instance.licenses[type]
 
-      url = params['url']
-      if /%s/.match url
-        url = url % owner
+      target_url = params['url']
+      if /%s/.match target_url
+        target_url = target_url % owner
       end
 
       badge_text = type unless badge_text = params['badge_text']
-
-      "[![License](http://%s/:license-%s-blue.svg)](%s)" % [
-          Config.instance.badge_service,
+      badge_url  = 'http://%s/:license-%s-%s.svg' % [
+          Config.instance.config['badge_service'],
           badge_text,
-          url
+          Config.instance.config['license_colour']
       ]
+
+      Badger.badge 'License', badge_url, target_url
     end
 
     def self.licenses

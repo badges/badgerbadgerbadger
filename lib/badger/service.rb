@@ -4,14 +4,17 @@ module Badger
       return nil unless params = Config.instance.services[name]
       params = Config.instance.services[name]
 
-      "[![%s](http://%s/%s/%s.svg)](https://%s/%s)" % [
-          params['alt_text'],
-          Config.instance.badge_service,
+      badge_url  = 'http://%s/%s/%s.svg' % [
+          Config.instance.config['badge_service'],
           params['badge_slug'],
-          github_slug,
+          github_slug
+      ]
+      target_url = 'https://%s/%s' % [
           params['url'],
           github_slug
       ]
+
+      Badger.badge params['alt_text'], badge_url, target_url
     end
   end
 end
