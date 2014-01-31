@@ -45,12 +45,12 @@ module Badger
   def Badger.search_gemspec dir
     spec_file = spec_files(dir)[0]
 
-    # I wanted to eval the gemspec but that broke *everything*
     if spec_file
       params           = {}
       gs               = File.readlines(File.join(dir, spec_file))
-      params[:rubygem] = (gs.grep /\.name /)[0].split('=')[-1].strip[1..-2]
-      params[:license] = (gs.grep /\.license /)[0].split('=')[-1].strip[1..-2]
+      params[:rubygem] = eval (gs.grep /\.name /)[0].sub('spec.', '')
+      l = eval (gs.grep /licenses?/)[0].sub('spec.', '')
+      params[:licenses] = l.class.name == 'Array' ? l : [l]
     end
 
     params || nil

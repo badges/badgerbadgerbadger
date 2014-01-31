@@ -60,6 +60,13 @@ module Badger
         @badger[0].should == "[![License](http://img.shields.io/:license-gpl3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.html)"
       end
 
+      it 'should be fine with multiple licenses' do
+        @badger.license 'mit'
+        @badger.license 'apache'
+        @badger[0].should == "[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)"
+        @badger[1].should == "[![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)"
+      end
+
       it 'should generate nothing for an unknown license' do
         @badger.license 'doge-license'
         @badger.length.should == 0
