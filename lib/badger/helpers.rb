@@ -1,4 +1,24 @@
 module Badger
+
+  def Badger.is_repo? dir
+    begin
+      Git.open(dir)
+    rescue ArgumentError
+      puts 'Run this from inside a git repo'
+      exit 1
+    end
+  end
+
+  def Badger.git_remote dir
+    remote = is_repo?(dir).remote.url
+    if remote.nil?
+      puts 'This repo does not appear to have a github remote'
+      exit 2
+    end
+
+    remote
+  end
+
   def Badger.has_travis? dir
     ((Dir.entries dir).select { |i| '.travis.yml' == i }).any?
   end
@@ -46,10 +66,10 @@ module Badger
     spec_file = spec_files(dir)[0]
 
     if spec_file
-      params           = {}
-      gs               = File.readlines(File.join(dir, spec_file))
-      params[:rubygem] = eval (gs.grep /\.name /)[0].sub('spec.', '')
-      l = eval (gs.grep /licenses?/)[0].sub('spec.', '')
+      params            = {}
+      gs                = File.readlines(File.join(dir, spec_file))
+      params[:rubygem]  = eval (gs.grep /\.name /)[0].sub('spec.', '')
+      l                 = eval (gs.grep /licenses?/)[0].sub('spec.', '')
       params[:licenses] = l.class.name == 'Array' ? l : [l]
     end
 

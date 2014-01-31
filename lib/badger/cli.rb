@@ -36,20 +36,7 @@ The supported license details are in https://github.com/pikesley/badger/blob/mas
     LONGDESC
 
     def badge dir = '.'
-      begin
-        @g = Git.open(dir)
-      rescue ArgumentError
-        puts 'Run this from inside a git repo'
-        exit 1
-      end
-
-      @r = @g.remote.url
-      if @r.nil?
-        puts 'This repo does not appear to have a github remote'
-        exit 2
-      end
-
-      @badger = Badger.new @r
+      @badger = Badger.new Badger.git_remote dir
 
       @badger.add 'travis' if Badger.has_travis? dir
       @badger.add 'gemnasium' if Badger.has_gemfile? dir
