@@ -3,7 +3,7 @@ require 'spec_helper'
 module Badger
   describe Badger do
     before :each do
-      @badger = Badger.new "https://github.com/doge/wow.git"
+      @badger = Badger.new "https://github.com/doge/wow"
     end
 
     context 'initialisation' do

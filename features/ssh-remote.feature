@@ -1,7 +1,7 @@
 Feature: Badge robot
 
   Background:
-    Given git remote is "https://github.com/doge/wow"
+    Given git remote is "git@github.com:doge/wow.git"
 
   @travis @gemnasium @coveralls @gemspec @mit
   Scenario: One with everything

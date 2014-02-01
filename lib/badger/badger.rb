@@ -7,7 +7,8 @@ module Badger
     end
 
     def github_slug
-      @github_slug ||= /.*github\.com.(.*)\.git/.match(@url)[1]
+#      @github_slug ||= /.*github\.com.(.*\/.*)(\.)?/.match(@url)[1]
+      @github_slug ||= /.*github.com[:\/](.*\/[^.git]*)(?:\.git)*/.match(@url)[1]
     end
 
     def owner
