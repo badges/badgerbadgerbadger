@@ -12,7 +12,7 @@ In addition, if it finds a gemspec, it will use it to generate:
 
 * A Rubygems Version Badge
 
-* A License Badge
+* A License Badge (or Badges)
 
 And if a license file is found, a License Badge will be generated. Currently supported licenses are:
 
