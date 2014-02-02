@@ -25,6 +25,11 @@ module Badger
         @badger = Badger.new "git@github.com:doge/wow.git"
         @badger.github_slug.should eql('doge/wow')
       end
+
+      it 'knows that sometimes an https url has a .git suffix because REASONS' do
+        @badger = Badger.new "https://github.com/doge/wow.git"
+        @badger.github_slug.should eql('doge/wow')
+      end
     end
 
     context 'service badges' do
