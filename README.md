@@ -34,11 +34,7 @@ Then
 
 ready to paste into the top of your README (with the correct URLs for your repo)
 
-Try
-
-    badger help badge
-
-to read about Badger's Opinions 
+You can read about Badger's Opinions [here](DESC.md) 
 
 If you're on a Mac, pipe the output into `pbcopy` to add the stuff directly to your clipboard:
 
