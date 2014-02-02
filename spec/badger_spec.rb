@@ -93,7 +93,7 @@ module Badger
         @badger.add 'travis'
         @badger.add 'coveralls'
         @badger.bonus
-        @badger[2].should == "[![Badges](http://img.shields.io/:badges-3/3-ff6799.svg)](http://img.shields.io)"
+        @badger[2].should == "[![Badges](http://img.shields.io/:badges-3/3-ff6799.svg)](https://github.com/pikesley/badger)"
       end
     end
 
