@@ -1,19 +1,19 @@
 travis:
   alt_text:   Build Status
-  url:        travis-ci.org
+  url_path:   travis-ci.org
   badge_slug: travis
 
 coveralls:
   alt_text:   Coverage Status
-  url:        coveralls.io/r
+  url_path:   coveralls.io/r
   badge_slug: coveralls
 
 gemnasium:
   alt_text:   Dependency Status
-  url:        gemnasium.com
+  url_path:   gemnasium.com
   badge_slug: gemnasium
 
 codeclimate:
   alt_text:   Code Climate
-  url:        codeclimate.com/github
+  url_path:   codeclimate.com/github
   badge_slug: codeclimate/github

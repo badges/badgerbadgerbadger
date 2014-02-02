@@ -10,7 +10,7 @@ module Badger
           github_slug
       ]
       target_url = 'https://%s/%s' % [
-          params['url'],
+          params['url_path'],
           github_slug
       ]
 
