@@ -7,7 +7,9 @@ module Badger
           badger.length + 1,
           Config.instance.config['bonus_badge_colour']
       ]
-      target_url = '%s' % Config.instance.config['bonus_badge_link']
+      target_url = '%s' % [
+          Config.instance.config['bonus_badge_link']
+      ]
 
       Badger.badge 'Badges', badge_url, target_url
     end
