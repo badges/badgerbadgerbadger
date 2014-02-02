@@ -34,7 +34,7 @@ Then
 
 ready to paste into the top of your README (with the correct URLs for your repo)
 
-You can read about Badger's Opinions [here](https://github.com/pikesley/badger/blob/master/DESC.md) 
+You can read about Badger's Opinions in the help text [here](https://github.com/pikesley/badger/blob/master/DESC.md) 
 
 If you're on a Mac, pipe the output into `pbcopy` to add the stuff directly to your clipboard:
 
