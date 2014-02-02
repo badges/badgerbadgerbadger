@@ -1,5 +1,7 @@
 require 'git'
 require 'thor'
+require 'yaml'
+require 'singleton'
 
 require 'badger/version'
 require 'badger/config'

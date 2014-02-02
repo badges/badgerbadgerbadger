@@ -1,6 +1,3 @@
-require 'yaml'
-require 'singleton'
-
 module Badger
   class Config
 

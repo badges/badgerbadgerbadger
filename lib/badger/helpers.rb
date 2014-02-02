@@ -1,5 +1,4 @@
 module Badger
-
   def Badger.is_repo? dir
     begin
       Git.open(dir)
