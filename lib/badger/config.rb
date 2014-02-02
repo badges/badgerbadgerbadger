@@ -4,9 +4,9 @@ module Badger
     include Singleton
 
     def initialize
-      @config   = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/config.yaml')))
-      @services = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/services.yaml')))
-      @licenses = YAML.load(File.open(File.join(File.dirname(__FILE__), '..', '..', 'config/licenses.yaml')))
+      @config   = fetch_yaml 'config'
+      @services = fetch_yaml 'services'
+      @licenses = fetch_yaml 'licenses'
     end
 
     def services
@@ -19,6 +19,23 @@ module Badger
 
     def config
       @config
+    end
+
+    private
+
+    def fetch_yaml file
+      YAML.load(
+          File.open(
+              File.join(
+                  File.dirname(__FILE__),
+                  '..',
+                  '..',
+                  'config/%s.yaml' % [
+                      file
+                  ]
+              )
+          )
+      )
     end
   end
 end
