@@ -33,6 +33,10 @@ module Badger
       self << Bonus.badge(self)
     end
 
+    def badge_type type
+      Config.instance.config['badge_type'] = type
+    end
+
     def to_s
       self.uniq!
 

@@ -21,6 +21,10 @@ module Badger
       @config
     end
 
+#    def badge_type= type
+#      @config['badge_type'] = type
+#    end
+
     private
 
     def fetch_yaml file
