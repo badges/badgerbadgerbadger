@@ -5,9 +5,12 @@ module Badger
 
     desc 'badge', 'Generate badge markdown'
     long_desc File.read File.join File.dirname( __FILE__), '..', '..', 'DESC.md'
+    method_option :png, :type => :boolean, :default => false, :desc => 'Generate PNG badges instead of the default SVG'
 
     def badge dir = '.'
       @badger = Badger.new Badger.git_remote dir
+
+      @badger.badge_type 'png' if options[:png]
 
       @badger.add 'travis' if Badger.has_travis? dir
       @badger.add 'gemnasium' if Badger.has_gemfile? dir

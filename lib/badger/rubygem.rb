@@ -1,7 +1,7 @@
 module Badger
   class Rubygem
     def self.badge name
-      badge_url = 'http://%s/gem/v/%s.svg' % [
+      badge_url = 'http://%s/gem/v/%s' % [
           Config.instance.config['badge_service'],
           name
       ]

@@ -3,6 +3,7 @@ require 'spec_helper'
 module Badger
   describe Badger do
     before :each do
+      Config.instance.config['badge_type'] = 'svg'
       @badger = Badger.new "https://github.com/doge/wow"
     end
 
@@ -114,6 +115,12 @@ module Badger
       @badger = Badger.new 'https://github.com/pikesley/diabetes-dashboard.git'
       @badger.add 'travis'
       @badger[0].should == '[![Build Status](http://img.shields.io/travis/pikesley/diabetes-dashboard.svg)](https://travis-ci.org/pikesley/diabetes-dashboard)'
+    end
+
+    it 'should let me choose a different badge type' do
+      @badger.badge_type 'png'
+      @badger.add 'travis'
+      @badger[0].should == '[![Build Status](http://img.shields.io/travis/doge/wow.png)](https://travis-ci.org/doge/wow)'
     end
   end
 end
