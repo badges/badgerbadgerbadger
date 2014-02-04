@@ -3,6 +3,7 @@ require 'spec_helper'
 module Badger
   describe Badger do
     before :each do
+      Config.instance.config['badge_type'] = 'svg'
       @badger = Badger.new "https://github.com/doge/wow"
     end
 
