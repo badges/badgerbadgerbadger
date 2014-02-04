@@ -1,10 +1,10 @@
-[![Build Status](http://img.shields.io/travis/pikesley/badger.svg)](https://travis-ci.org/pikesley/badger)
-[![Dependency Status](http://img.shields.io/gemnasium/pikesley/badger.svg)](https://gemnasium.com/pikesley/badger)
-[![Coverage Status](http://img.shields.io/coveralls/pikesley/badger.svg)](https://coveralls.io/r/pikesley/badger)
-[![Code Climate](http://img.shields.io/codeclimate/github/pikesley/badger.svg)](https://codeclimate.com/github/pikesley/badger)
-[![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg)](https://rubygems.org/gems/badgerbadgerbadger)
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://pikesley.mit-license.org)
-[![Badges](http://img.shields.io/:badges-7/7-ff6799.svg)](http://img.shields.io)
+[![Build Status](http://img.shields.io/travis/pikesley/badger.png)](https://travis-ci.org/pikesley/badger)
+[![Dependency Status](http://img.shields.io/gemnasium/pikesley/badger.png)](https://gemnasium.com/pikesley/badger)
+[![Coverage Status](http://img.shields.io/coveralls/pikesley/badger.png)](https://coveralls.io/r/pikesley/badger)
+[![Code Climate](http://img.shields.io/codeclimate/github/pikesley/badger.png)](https://codeclimate.com/github/pikesley/badger)
+[![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.png)](https://rubygems.org/gems/badgerbadgerbadger)
+[![License](http://img.shields.io/:license-mit-blue.png)](http://pikesley.mit-license.org)
+[![Badges](http://img.shields.io/:badges-7/7-ff6799.png)](https://github.com/pikesley/badger)
 
 #Badger
 
