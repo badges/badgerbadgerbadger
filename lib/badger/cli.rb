@@ -2,6 +2,13 @@ require 'badger'
 
 module Badger
   class CLI < Thor
+    desc 'version', 'Print badger version'
+    def version
+      puts "badger version %s" % [
+          VERSION
+      ]
+    end
+    map %w(-v --version) => :version
 
     desc 'badge', 'Generate badge markdown'
     long_desc File.read File.join File.dirname( __FILE__), '..', '..', 'DESC.md'

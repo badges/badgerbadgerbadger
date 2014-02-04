@@ -22,7 +22,7 @@ Feature: Badge robot
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
     """
 
-   Scenario: handle a non-git-repo gracefully
+   Scenario: Handle a non-git-repo gracefully
      When I run `badger badge /tmp`
      Then the output should contain:
      """
@@ -31,10 +31,17 @@ Run this from inside a git repo
      And the exit status should be 1
 
    @no-remote
-   Scenario: handle a git repo without a github remote
+   Scenario: Handle a git repo without a github remote
      When I run `badger badge /tmp/not_wow`
      Then the output should contain:
      """
 This repo does not appear to have a github remote
      """
      And the exit status should be 2
+
+   Scenario:Get a sensible version string
+     When I successfully run `badger -v`
+     Then the output should contain:
+     """
+badger version
+     """
