@@ -109,5 +109,11 @@ module Badger
 }
       end
     end
+
+    it 'should work with a "-" in the remote name' do
+      @badger = Badger.new 'https://github.com/pikesley/diabetes-dashboard.git'
+      @badger.add 'travis'
+      @badger[0].should == '[![Build Status](http://img.shields.io/travis/pikesley/diabetes-dashboard.svg)](https://travis-ci.org/pikesley/diabetes-dashboard)'
+    end
   end
 end
