@@ -18,6 +18,10 @@ module Badger
     remote
   end
 
+  def Badger.slug_extract remote_url
+    remote_url.match(/.*github.com[\/:](.*)/)[1].gsub(/.git$/, '')
+  end
+
   def Badger.has_travis? dir
     ((Dir.entries dir).select { |i| '.travis.yml' == i }).any?
   end
