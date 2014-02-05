@@ -4,6 +4,10 @@ module Badger
     include Singleton
 
     def initialize
+      reset!
+    end
+
+    def reset!
       @config   = fetch_yaml 'config'
       @services = fetch_yaml 'services'
       @licenses = fetch_yaml 'licenses'
