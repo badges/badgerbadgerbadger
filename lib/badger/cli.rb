@@ -26,8 +26,10 @@ module Badger
 
       if gemspec_params = Badger.search_gemspec(dir)
         @badger.rubygem gemspec_params[:rubygem]
-        gemspec_params[:licenses].each do |license_type|
+        if gemspec_params[:licenses]
+          gemspec_params[:licenses].each do |license_type|
           @badger.license license_type
+        end
         end
       end
 

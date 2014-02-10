@@ -71,9 +71,12 @@ module Badger
     if spec_file
       params            = {}
       gs                = File.readlines(File.join(dir, spec_file))
-      params[:rubygem]  = eval (gs.grep /\.name /)[0].sub('spec.', '')
-      l                 = eval (gs.grep /licenses?/)[0].sub('spec.', '')
-      params[:licenses] = l.class.name == 'Array' ? l : [l]
+      params[:rubygem]  = eval (gs.grep /\.name /)[0].sub(/^\s.*\./, '')
+      lines = (gs.grep /licenses?/)
+      if lines.any?
+        l                 = eval (lines[0]).sub(/^\s.*\./, '')
+        params[:licenses] = l.class.name == 'Array' ? l : [l]
+      end
     end
 
     params || nil
