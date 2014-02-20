@@ -1,52 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Badger by pikesley</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-      <link rel="icon"
-            type="image/png"
-            href="favicon.png">
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Badger : Generate Github project badges like a Boss" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Badger</title>
   </head>
+
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/pikesley/badger">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/pikesley/badger/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/pikesley/badger/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
 
-    <div class="wrapper">
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/badges/badgerbadgerbadger">View on GitHub</a>
 
-      <section>
-        <div id="title">
-          <h1>Badger</h1>
-          <p>Generate Github project badges like a Boss</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/pikesley">pikesley</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
+          <h1 id="project_title">Badger</h1>
+          <h2 id="project_tagline">Generate Github project badges like a Boss</h2>
 
-        <p><a href="https://travis-ci.org/pikesley/badger"><img src="http://img.shields.io/travis/pikesley/badger.svg" alt="Build Status"></a>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/badges/badgerbadgerbadger/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/badges/badgerbadgerbadger/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><a href="https://travis-ci.org/badges/badgerbadgerbadger"><img src="http://img.shields.io/travis/badges/badgerbadgerbadger.svg" alt="Build Status"></a>
 <a href="https://gemnasium.com/pikesley/badger"><img src="http://img.shields.io/gemnasium/pikesley/badger.svg" alt="Dependency Status"></a>
 <a href="https://coveralls.io/r/pikesley/badger"><img src="http://img.shields.io/coveralls/pikesley/badger.svg" alt="Coverage Status"></a>
-<a href="https://codeclimate.com/github/pikesley/badger"><img src="http://img.shields.io/codeclimate/github/pikesley/badger.svg" alt="Code Climate"></a>
+<a href="https://codeclimate.com/github/badges/badgerbadgerbadger"><img src="http://img.shields.io/codeclimate/github/badges/badgerbadgerbadger.svg" alt="Code Climate"></a>
 <a href="https://rubygems.org/gems/badgerbadgerbadger"><img src="http://img.shields.io/gem/v/badgerbadgerbadger.svg" alt="Gem Version"></a>
 <a href="http://pikesley.mit-license.org"><img src="http://img.shields.io/:license-mit-blue.svg" alt="License"></a>
-<a href="http://img.shields.io"><img src="http://img.shields.io/:badges-7/7-ff6799.svg" alt="Badges"></a></p>
+<a href="https://github.com/badges/badgerbadgerbadger"><img src="http://img.shields.io/:badges-7/7-ff6799.svg" alt="Badges"></a></p>
 
 <h1>
 <a name="badger" class="anchor" href="#badger"><span class="octicon octicon-link"></span></a>Badger</h1>
@@ -97,9 +88,16 @@ bundle
 rake
 </code></pre>
       </section>
-
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Badger maintained by <a href="https://github.com/badges">badges</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -110,6 +108,7 @@ rake
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
+
 
   </body>
 </html>
