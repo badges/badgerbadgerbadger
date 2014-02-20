@@ -14,5 +14,5 @@ Feature: Badge robot
 [![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.png)](https://codeclimate.com/github/doge/wow)
 [![Gem Version](http://img.shields.io/gem/v/suchgem.png)](https://rubygems.org/gems/suchgem)
 [![License](http://img.shields.io/:license-mit-blue.png)](http://doge.mit-license.org)
-[![Badges](http://img.shields.io/:badges-7/7-ff6799.png)](https://github.com/pikesley/badger)
+[![Badges](http://img.shields.io/:badges-7/7-ff6799.png)](https://github.com/badges/badgerbadgerbadger)
     """
