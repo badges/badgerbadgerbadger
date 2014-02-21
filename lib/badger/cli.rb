@@ -12,7 +12,7 @@ module Badger
 
     desc 'badge', 'Generate badge markdown'
     long_desc File.read File.join File.dirname( __FILE__), '..', '..', 'DESC.md'
-    method_option :png, :type => :boolean, :default => false, :desc => 'Generate PNG badges instead of the default SVG'
+    method_option :png, :type => :boolean, :default => false, :desc => 'Generate PNG badges instead of the default SVG (because sometimes Github does caching things)'
 
     def badge dir = '.'
       @badger = Badger.new Badger.git_remote dir
