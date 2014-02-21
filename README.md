@@ -1,9 +1,9 @@
 [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg)](https://travis-ci.org/badges/badgerbadgerbadger)
-[![Dependency Status](http://img.shields.io/gemnasium/pikesley/badger.svg)](https://gemnasium.com/pikesley/badger)
+[![Dependency Status](http://img.shields.io/gemnasium/badges/badgerbadgerbadger.svg)](https://gemnasium.com/badges/badgerbadgerbadger)
 [![Coverage Status](http://img.shields.io/coveralls/pikesley/badger.svg)](https://coveralls.io/r/pikesley/badger)
 [![Code Climate](http://img.shields.io/codeclimate/github/badges/badgerbadgerbadger.svg)](https://codeclimate.com/github/badges/badgerbadgerbadger)
 [![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg)](https://rubygems.org/gems/badgerbadgerbadger)
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://pikesley.mit-license.org)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://badges.mit-license.org)
 [![Badges](http://img.shields.io/:badges-7/7-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
 
 #Badger
