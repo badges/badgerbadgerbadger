@@ -85,12 +85,12 @@ module Badger
       end
     end
 
-    context 'rubygems' do
-      it 'should have a rubygems badge' do
-        @badger.rubygem 'suchgem'
-        @badger[0].should == "[![Gem Version](http://img.shields.io/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)"
-      end
-    end
+#    context 'rubygems' do
+#      it 'should have a rubygems badge' do
+#        @badger.rubygem 'suchgem'
+#        @badger[0].should == "[![Gem Version](http://img.shields.io/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)"
+#      end
+#    end
 
     context 'bonus badge' do
       it 'should have a badges badge' do
