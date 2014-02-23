@@ -46,3 +46,7 @@ If you're on a Mac, pipe the output into `pbcopy` to add the stuff directly to y
     cd badger
     bundle
     rake
+    
+### Adding a new license
+
+If you'd like badgerbadgerbadger to support a license we don't currently have, please see the note at the top of the [licenses config file](https://github.com/badges/badgerbadgerbadger/blob/master/config/licenses.yaml#L6)

@@ -1,32 +1,19 @@
 Before '@mit' do
-  f = File.open "#{$temp_repo}/LICENSE.md", 'w'
-  f.write "The MIT License (MIT)\n"
-  f.close
+  FileUtils.cp "#{$licenses_dir}/mit.md", "#{$temp_repo}/LICENSE.md"
 end
 
 Before '@apache' do
-  f = File.open "#{$temp_repo}/LICENSE.md", 'w'
-  f.write "Apache License\n"
-  f.write "Version 2.0\n"
-  f.close
+  FileUtils.cp "#{$licenses_dir}/apache.txt", "#{$temp_repo}/LICENSE.txt"
 end
 
 Before '@gpl2' do
-  f = File.open "#{$temp_repo}/LICENSE.md", 'w'
-  f.write "GNU GENERAL PUBLIC LICENSE\n"
-  f.write "Version 2\n"
-  f.close
+  FileUtils.cp "#{$licenses_dir}/gpl-2.0.txt", "#{$temp_repo}/LICENSE.txt"
 end
 
 Before '@gpl3' do
-  f = File.open "#{$temp_repo}/LICENSE.md", 'w'
-  f.write "GNU GENERAL PUBLIC LICENSE\n"
-  f.write "Version 3\n"
-  f.close
+  FileUtils.cp "#{$licenses_dir}/gpl-3.0.txt", "#{$temp_repo}/LICENSE.txt"
 end
 
 Before '@doge-license' do
-  f = File.open "#{$temp_repo}/LICENSE.md", 'w'
-  f.write "WOW SUCH LICENSE\n"
-  f.close
+  FileUtils.cp "#{$licenses_dir}/doge.md", "#{$temp_repo}/LICENSE.txt"
 end
