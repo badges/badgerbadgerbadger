@@ -2,6 +2,9 @@
 #   url:        - where the license lives
 #   regex:      - text to look for in the license file
 #   badge-text: - text to use in the generated badge, if different from license_name
+#
+# If you wanna contribute a new license, please add it here and add a specimen in features/support/fixtures/licenses/
+# A scenario in features/licenses.feature (using a hook in features/support/hooks/licenses.rb) would also help
 
 mit:
   url:        http://%s.mit-license.org
