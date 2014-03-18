@@ -8,6 +8,5 @@ deploy:
   gemspec: badger.gemspec
   gem: badgerbadgerbadger
   on:
-    repo: pikesley/badger
     tags: true
     all_branches: true
