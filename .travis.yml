@@ -10,3 +10,4 @@ deploy:
   on:
     repo: pikesley/badger
     tags: true
+    all_branches: true
