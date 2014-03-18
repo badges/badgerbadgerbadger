@@ -6,6 +6,8 @@ deploy:
   api_key:
     secure: Fq5ig8hiOsHDA+uC1rWMUTQPljH1hIRzsbWo1aYQxE+ldNXrMjPOtwApTPTeY1lJ2MqZEXONNbH/XTmStGssWc7jl1o0JlprlHIH11kXANpjgkhq4eR30abZLt8+FJdIKpE44fGjk5USVu8xAqqkZxa5/SUbJezBsooFCcsN1Bg=
   gem: badgerbadgerbadger
+  gemspec: badger.gemspec
   on:
+    repo: badges/badgerbadgerbadger
     tags: true
     all_branches: true
