@@ -39,13 +39,13 @@ module Badger
     context 'service badges' do
       it 'should have a travis badge' do
         @badger.add 'travis'
-        @badger[0].should == "[![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)"
+        @badger[0].should == "[![Build Status](https://travis-ci.org/doge/wow.svg)](https://travis-ci.org/doge/wow)"
       end
 
       it 'should have a travis badge and a gemnasium badge' do
         @badger.add 'travis'
         @badger.add 'gemnasium'
-        @badger[0].should == "[![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)"
+        @badger[0].should == "[![Build Status](https://travis-ci.org/doge/wow.svg)](https://travis-ci.org/doge/wow)"
         @badger[1].should == "[![Dependency Status](http://img.shields.io/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)"
         @badger.length.should == 2
       end
@@ -107,7 +107,7 @@ module Badger
         @badger.add 'codeclimate'
         @badger.license 'mit'
         @badger.to_s.should ==
-            %{[![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
+            %{[![Build Status](https://travis-ci.org/doge/wow.svg)](https://travis-ci.org/doge/wow)
 [![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 }
@@ -117,13 +117,13 @@ module Badger
     it 'should work with a "-" in the remote name' do
       @badger = Badger.new 'https://github.com/pikesley/diabetes-dashboard.git'
       @badger.add 'travis'
-      @badger[0].should == '[![Build Status](http://img.shields.io/travis/pikesley/diabetes-dashboard.svg)](https://travis-ci.org/pikesley/diabetes-dashboard)'
+      @badger[0].should == '[![Build Status](https://travis-ci.org/pikesley/diabetes-dashboard.svg)](https://travis-ci.org/pikesley/diabetes-dashboard)'
     end
 
     it 'should let me choose a different badge type' do
       @badger.badge_type 'png'
       @badger.add 'travis'
-      @badger[0].should == '[![Build Status](http://img.shields.io/travis/doge/wow.png)](https://travis-ci.org/doge/wow)'
+      @badger[0].should == '[![Build Status](https://travis-ci.org/doge/wow.png)](https://travis-ci.org/doge/wow)'
     end
   end
 end
