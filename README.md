@@ -1,4 +1,4 @@
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg)](https://travis-ci.org/badges/badgerbadgerbadger)
+[![Build Status](https://travis-ci.org/badges/badgerbadgerbadger.svg)](https://travis-ci.org/badges/badgerbadgerbadger)
 [![Dependency Status](http://img.shields.io/gemnasium/badges/badgerbadgerbadger.svg)](https://gemnasium.com/badges/badgerbadgerbadger)
 [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg)](https://coveralls.io/r/badges/badgerbadgerbadger)
 [![Code Climate](http://img.shields.io/codeclimate/github/badges/badgerbadgerbadger.svg)](https://codeclimate.com/github/badges/badgerbadgerbadger)
