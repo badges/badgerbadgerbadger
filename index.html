@@ -1,37 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Badger : Generate Github project badges like a Boss" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Badger by badges</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Badger</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Badger</h1>
+        <p class="header">Generate Github project badges like a Boss</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/badges/badgerbadgerbadger">View on GitHub</a>
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/badges/badgerbadgerbadger/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/badges/badgerbadgerbadger/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/badges/badgerbadgerbadger">View On GitHub</a></li>
+        </ul>
 
-          <h1 id="project_title">Badger</h1>
-          <h2 id="project_tagline">Generate Github project badges like a Boss</h2>
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/badges">badges</a></p>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/badges/badgerbadgerbadger/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/badges/badgerbadgerbadger/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p><a href="https://travis-ci.org/badges/badgerbadgerbadger"><img src="http://img.shields.io/travis/badges/badgerbadgerbadger.svg" alt="Build Status"></a>
+      </header>
+      <section>
+        <p><a href="https://travis-ci.org/badges/badgerbadgerbadger"><img src="https://travis-ci.org/badges/badgerbadgerbadger.svg" alt="Build Status"></a>
 <a href="https://gemnasium.com/badges/badgerbadgerbadger"><img src="http://img.shields.io/gemnasium/badges/badgerbadgerbadger.svg" alt="Dependency Status"></a>
 <a href="https://coveralls.io/r/badges/badgerbadgerbadger"><img src="http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg" alt="Coverage Status"></a>
 <a href="https://codeclimate.com/github/badges/badgerbadgerbadger"><img src="http://img.shields.io/codeclimate/github/badges/badgerbadgerbadger.svg" alt="Code Climate"></a>
@@ -61,13 +60,13 @@ bundle
 <p>Then</p>
 
 <pre><code>badger badge
-[![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
+[![Build Status](https://travis-ci.org/doge/wow.svg)](https://travis-ci.org/doge/wow)
 [![Dependency Status](http://img.shields.io/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
 [![Coverage Status](http://img.shields.io/coveralls/doge/wow.svg)](https://coveralls.io/r/doge/wow)
 [![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
 [![Gem Version](http://img.shields.io/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
-[![Badges](http://img.shields.io/:badges-7/7-ff6799.svg)](http://img.shields.io) 
+[![Badges](http://img.shields.io/:badges-7/7-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
 </code></pre>
 
 <p>ready to paste into the top of your README (with the correct URLs for your repo)</p>
@@ -87,18 +86,18 @@ cd badger
 bundle
 rake
 </code></pre>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Badger maintained by <a href="https://github.com/badges">badges</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+<h3>
+<a name="adding-a-new-license" class="anchor" href="#adding-a-new-license"><span class="octicon octicon-link"></span></a>Adding a new license</h3>
+
+<p>If you'd like badgerbadgerbadger to support a license we don't currently have, please see the note at the top of the <a href="https://github.com/badges/badgerbadgerbadger/blob/master/config/licenses.yaml#L6-L7">licenses config file</a></p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
       </footer>
     </div>
-
-              <script type="text/javascript">
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		          <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -108,7 +107,6 @@ rake
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
-
 
   </body>
 </html>
