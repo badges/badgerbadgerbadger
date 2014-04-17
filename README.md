@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/badges/badgerbadgerbadger.png?label=ready&title=Ready)](https://waffle.io/badges/badgerbadgerbadger)
 [![Build Status](https://travis-ci.org/badges/badgerbadgerbadger.svg)](https://travis-ci.org/badges/badgerbadgerbadger)
 [![Dependency Status](http://img.shields.io/gemnasium/badges/badgerbadgerbadger.svg)](https://gemnasium.com/badges/badgerbadgerbadger)
 [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg)](https://coveralls.io/r/badges/badgerbadgerbadger)
