@@ -11,3 +11,5 @@ deploy:
     repo: badges/badgerbadgerbadger
     tags: true
     all_branches: true
+git:
+  depth: 10
