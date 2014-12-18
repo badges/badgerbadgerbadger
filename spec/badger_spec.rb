@@ -61,14 +61,14 @@ module Badger
         @badger = Badger.new "https://github.com/pikesley/githubbadges"
         @badger.add 'issues'
         expect(@badger.length).to eq 1
-        expect(@badger[0]).to eq "[![Github Issues](http://githubbadges.herokuapp.com/pikesley/githubbadges/issues.svg)](https://githubx.com/pikesley/githubbadges/issues)"
+        expect(@badger[0]).to eq "[![Github Issues](http://githubbadges.herokuapp.com/pikesley/githubbadges/issues.svg)](https://github.com/pikesley/githubbadges/issues)"
       end
 
       it 'should have a pending pull-requests badge', :vcr do
         @badger = Badger.new "https://github.com/pikesley/githubbadges"
         @badger.add 'pulls'
         expect(@badger.length).to eq 1
-        expect(@badger[0]).to eq "[![Pending Pull-Requests](http://githubbadges.herokuapp.com/pikesley/githubbadges/pulls.svg)](https://githubx.com/pikesley/githubbadges/pulls)"
+        expect(@badger[0]).to eq "[![Pending Pull-Requests](http://githubbadges.herokuapp.com/pikesley/githubbadges/pulls.svg)](https://github.com/pikesley/githubbadges/pulls)"
       end
     end
 

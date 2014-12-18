@@ -16,9 +16,9 @@ module Badger
 
     def add service
       if service == 'issues'
-        self << Badger.badge('Github Issues', 'http://githubbadges.herokuapp.com/pikesley/githubbadges/issues', 'https://githubx.com/pikesley/githubbadges/issues')
+        self << Badger.badge('Github Issues', "http://githubbadges.herokuapp.com/#{github_slug}/issues", "https://github.com/#{github_slug}/issues")
       elsif service == 'pulls'
-        self << Badger.badge('Pending Pull-Requests', 'http://githubbadges.herokuapp.com/pikesley/githubbadges/pulls', 'https://githubx.com/pikesley/githubbadges/pulls')
+        self << Badger.badge('Pending Pull-Requests', "http://githubbadges.herokuapp.com/#{github_slug}/pulls", "https://github.com/#{github_slug}/pulls")
       else
         self << Service.badge(service, github_slug)
       end
