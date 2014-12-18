@@ -24,9 +24,6 @@ module Badger
       @badger.add 'coveralls' if Badger.has_coveralls? dir
       @badger.add 'codeclimate' if @badger.any?
 
-      @badger.add 'issues'
-      @badger.add 'pulls'
-
       if gemspec_params = Badger.search_gemspec(dir)
         @badger.rubygem gemspec_params[:rubygem]
         if gemspec_params[:licenses]
