@@ -12,7 +12,9 @@ Feature: Badge robot
 [![Dependency Status](http://img.shields.io/gemnasium/doge/wow.png)](https://gemnasium.com/doge/wow)
 [![Coverage Status](http://img.shields.io/coveralls/doge/wow.png)](https://coveralls.io/r/doge/wow)
 [![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.png)](https://codeclimate.com/github/doge/wow)
+[![Github Issues](http://githubbadges.herokuapp.com/doge/wow/issues.png)](https://github.com/doge/wow/issues)
+[![Pending Pull-Requests](http://githubbadges.herokuapp.com/doge/wow/pulls.png)](https://github.com/doge/wow/pulls)
 [![Gem Version](http://img.shields.io/gem/v/suchgem.png)](https://rubygems.org/gems/suchgem)
 [![License](http://img.shields.io/:license-mit-blue.png)](http://doge.mit-license.org)
-[![Badges](http://img.shields.io/:badges-7/7-ff6799.png)](https://github.com/badges/badgerbadgerbadger)
+[![Badges](http://img.shields.io/:badges-9/9-ff6799.png)](https://github.com/badges/badgerbadgerbadger)
     """

@@ -56,6 +56,22 @@ module Badger
       end
     end
 
+    context 'github issues badges' do
+      it 'should have an open-issues badge', :vcr do
+        @badger = Badger.new "https://github.com/pikesley/githubbadges"
+        @badger.add 'issues'
+        expect(@badger.length).to eq 1
+        expect(@badger[0]).to eq "[![Github Issues](http://githubbadges.herokuapp.com/pikesley/githubbadges/issues.svg)](https://github.com/pikesley/githubbadges/issues)"
+      end
+
+      it 'should have a pending pull-requests badge', :vcr do
+        @badger = Badger.new "https://github.com/pikesley/githubbadges"
+        @badger.add 'pulls'
+        expect(@badger.length).to eq 1
+        expect(@badger[0]).to eq "[![Pending Pull-Requests](http://githubbadges.herokuapp.com/pikesley/githubbadges/pulls.svg)](https://github.com/pikesley/githubbadges/pulls)"
+      end
+    end
+
     context 'licenses' do
       it 'should generate an MIT badge' do
         @badger.license 'mit'

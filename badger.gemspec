@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'thor', '~> 0.18'
   spec.add_dependency 'git', '~> 1.2'
+  spec.add_dependency 'curb', '~> 0.8'
 
   spec.add_development_dependency 'bundler', '~> 1.5'
   spec.add_development_dependency 'rake', '~> 10.1'
@@ -31,4 +32,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'terminal-notifier-guard', '~> 1.5'
   spec.add_development_dependency 'coveralls', '~> 0.7'
   spec.add_development_dependency 'webmock', '~> 1.17'
+  spec.add_development_dependency 'vcr', '~> 2.9'
 end
