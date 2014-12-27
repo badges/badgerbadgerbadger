@@ -1,5 +1,4 @@
 require 'badger'
-require_relative 'support/vcr_setup'
 
 require 'coveralls'
 Coveralls.wear_merged!

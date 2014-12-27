@@ -1,4 +1,4 @@
-Feature: Badge robot
+Feature: Github issues and PRs
 
 Background:
 Given git remote is "https://github.com/doge/wow"
