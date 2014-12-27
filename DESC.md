@@ -25,3 +25,5 @@ And if a license file is found, a License Badge will be generated. Currently sup
 * GPL-3
 
 The supported license details are in `https://github.com/badges/badgerbadgerbadger/blob/master/config/licenses.yaml`, if you're using a different license, send a PR! And if your gemspec license conflicts with your LICENSE file, you should probably fix that.
+
+Use the `--pulls` flag to add badges for open Github issues and pull-requests.

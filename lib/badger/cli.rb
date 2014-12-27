@@ -13,6 +13,7 @@ module Badger
     desc 'badge', 'Generate badge markdown'
     long_desc File.read File.join File.dirname( __FILE__), '..', '..', 'DESC.md'
     method_option :png, :type => :boolean, :default => false, :desc => 'Generate PNG badges instead of the default SVG (because sometimes Github does caching things)'
+    method_option :pulls, :type => :boolean, :default => false, :desc => 'Generate Github pull-request and issue-count badges'
 
     def badge dir = '.'
       @badger = Badger.new Badger.git_remote dir
@@ -23,6 +24,9 @@ module Badger
       @badger.add 'gemnasium' if Badger.has_gemfile? dir
       @badger.add 'coveralls' if Badger.has_coveralls? dir
       @badger.add 'codeclimate' if @badger.any?
+
+      @badger.add 'issues' if options[:pulls]
+      @badger.add 'pulls' if options[:pulls]
 
       if gemspec_params = Badger.search_gemspec(dir)
         @badger.rubygem gemspec_params[:rubygem]

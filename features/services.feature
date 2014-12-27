@@ -8,7 +8,7 @@ Feature: Get service badges
     When I successfully run `badger badge /tmp/wow_repo`
     Then the output should contain:
     """
-[![Build Status](https://travis-ci.org/doge/wow.svg)](https://travis-ci.org/doge/wow)
+[![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
     """
     And the output should not contain:
     """
