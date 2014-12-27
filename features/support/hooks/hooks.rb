@@ -13,4 +13,3 @@ end
 After '@no-remote' do
   FileUtils.remove_dir '/tmp/not_wow', :force => true
 end
-
