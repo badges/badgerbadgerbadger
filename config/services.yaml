@@ -2,7 +2,7 @@ travis:
   alt_text:   Build Status
   scheme:     https
   url_path:   travis-ci.org
-  offers_svg: true
+  badge_slug: travis
 
 coveralls:
   alt_text:   Coverage Status

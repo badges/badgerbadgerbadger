@@ -8,7 +8,7 @@ Feature: Badge robot
     When I successfully run `badger badge /tmp/wow_repo --png `
     Then the output should contain:
     """
-[![Build Status](https://travis-ci.org/doge/wow.png)](https://travis-ci.org/doge/wow)
+[![Build Status](http://img.shields.io/travis/doge/wow.png)](https://travis-ci.org/doge/wow)
 [![Dependency Status](http://img.shields.io/gemnasium/doge/wow.png)](https://gemnasium.com/doge/wow)
 [![Coverage Status](http://img.shields.io/coveralls/doge/wow.png)](https://coveralls.io/r/doge/wow)
 [![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.png)](https://codeclimate.com/github/doge/wow)

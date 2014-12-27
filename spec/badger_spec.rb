@@ -39,13 +39,13 @@ module Badger
     context 'service badges' do
       it 'should have a travis badge' do
         @badger.add 'travis'
-        expect(@badger[0]).to eq "[![Build Status](https://travis-ci.org/doge/wow.svg)](https://travis-ci.org/doge/wow)"
+        expect(@badger[0]).to eq "[![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)"
       end
 
       it 'should have a travis badge and a gemnasium badge' do
         @badger.add 'travis'
         @badger.add 'gemnasium'
-        expect(@badger[0]).to eq "[![Build Status](https://travis-ci.org/doge/wow.svg)](https://travis-ci.org/doge/wow)"
+        expect(@badger[0]).to eq "[![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)"
         expect(@badger[1]).to eq "[![Dependency Status](http://img.shields.io/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)"
         expect(@badger.length).to eq 2
       end
@@ -123,7 +123,7 @@ module Badger
         @badger.add 'codeclimate'
         @badger.license 'mit'
         expect(@badger.to_s).to eq(
-            %{[![Build Status](https://travis-ci.org/doge/wow.svg)](https://travis-ci.org/doge/wow)
+            %{[![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
 [![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 }
@@ -134,13 +134,13 @@ module Badger
     it 'should work with a "-" in the remote name' do
       @badger = Badger.new 'https://github.com/pikesley/diabetes-dashboard.git'
       @badger.add 'travis'
-      expect(@badger[0]).to eq '[![Build Status](https://travis-ci.org/pikesley/diabetes-dashboard.svg)](https://travis-ci.org/pikesley/diabetes-dashboard)'
+      expect(@badger[0]).to eq '[![Build Status](http://img.shields.io/travis/pikesley/diabetes-dashboard.svg)](https://travis-ci.org/pikesley/diabetes-dashboard)'
     end
 
     it 'should let me choose a different badge type' do
       @badger.badge_type 'png'
       @badger.add 'travis'
-      expect(@badger[0]).to eq '[![Build Status](https://travis-ci.org/doge/wow.png)](https://travis-ci.org/doge/wow)'
+      expect(@badger[0]).to eq '[![Build Status](http://img.shields.io/travis/doge/wow.png)](https://travis-ci.org/doge/wow)'
     end
   end
 end
