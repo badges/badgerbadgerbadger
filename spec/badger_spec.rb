@@ -101,6 +101,13 @@ module Badger
       end
     end
 
+    context 'github pulls' do
+      it 'should have a pull-requests badge' do
+        @badger.add 'pulls'
+        expect(@badger[0]).to eq "[![Pending Pull-Requests](http://githubbadges.herokuapp.com/doge/wow/pulls.svg)](https://github.com/doge/wow/pulls)"
+      end
+    end
+
     context 'output' do
       it 'should produce some lines of text' do
         @badger.add 'travis'
