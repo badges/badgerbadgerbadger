@@ -14,13 +14,20 @@ module Badger
     long_desc File.read File.join File.dirname( __FILE__), '..', '..', 'DESC.md'
     method_option :png, :type => :boolean, :default => false, :desc => 'Generate PNG badges instead of the default SVG (because sometimes Github does caching things)'
     method_option :pulls, :type => :boolean, :default => false, :desc => 'Generate Github pull-request and issue-count badges'
-    method_option :style, :type => :string, :default => nil, :desc => "Choose a different badge style (currently supported: 'flat' or 'flat-square')"
+    method_option :style, :type => :string, :default => nil, :desc => "Choose a different badge style (currently supported: #{Config.instance.config['valid_styles'].join ', '})"
 
     def badge dir = '.'
       @badger = Badger.new Badger.git_remote dir
 
       @badger.badge_type 'png' if options[:png]
-      @badger.style options[:style] if options[:style]
+
+      if options[:style]
+        unless Config.instance.config['valid_styles'].include? options[:style]
+          puts "Invalid style choice '#{options[:style]}'"
+          exit 3
+        end
+        @badger.style options[:style]
+      end
 
       @badger.add 'travis' if Badger.has_travis? dir
       @badger.add 'gemnasium' if Badger.has_gemfile? dir

@@ -3,3 +3,6 @@ license_colour:     blue
 bonus_badge_colour: ff6799
 bonus_badge_link:   https://github.com/badges/badgerbadgerbadger
 badge_type:         svg
+valid_styles:
+  - flat
+  - flat-square
