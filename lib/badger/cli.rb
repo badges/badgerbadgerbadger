@@ -14,6 +14,7 @@ module Badger
     long_desc File.read File.join File.dirname( __FILE__), '..', '..', 'DESC.md'
     method_option :png, :type => :boolean, :default => false, :desc => 'Generate PNG badges instead of the default SVG (because sometimes Github does caching things)'
     method_option :pulls, :type => :boolean, :default => false, :desc => 'Generate Github pull-request and issue-count badges'
+    method_option :style, :type => :string, :default => nil, :desc => "Choose a different badge style (currently supported: 'flat' or 'flat-square')"
 
     def badge dir = '.'
       @badger = Badger.new Badger.git_remote dir
@@ -42,6 +43,8 @@ module Badger
       end
 
       @badger.bonus
+
+      @badger.set_style options[:style] if options[:style]
       puts @badger.to_s
     end
 
