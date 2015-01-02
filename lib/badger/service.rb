@@ -18,31 +18,28 @@ module Badger
       end
 
       badge_url = '%s/%s' % [
-          base_url,
-          github_slug
+        base_url,
+        github_slug
       ]
 
       target_url = 'https://%s/%s' % [
-          params['url_path'],
-          github_slug
+        params['url_path'],
+        github_slug
       ]
 
       if params['suffix']
-        badge_url = '%s/%s' % [
-          badge_url,
-          params['suffix']
-        ]
-
-        target_url = '%s/%s' % [
-          target_url,
-          params['suffix']
-        ]
+        badge_url = suffixify badge_url, params['suffix']
+        target_url = suffixify target_url, params['suffix']
       end
 
-      require 'pry'
-  #    binding.pry
-
       Badger.badge params['alt_text'], badge_url, target_url
+    end
+
+    def self.suffixify path, suffix
+      '%s/%s' % [
+        path,
+        suffix
+      ]
     end
   end
 end
