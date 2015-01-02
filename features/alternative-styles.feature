@@ -16,3 +16,10 @@ Feature: Alternative styles
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://doge.mit-license.org)
 [![Badges](http://img.shields.io/:badges-7/7-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
     """
+  Scenario: Invalid style choice
+    When I run `badger badge --style fluffy /tmp/wow_repo`
+    Then the output should contain:
+    """
+    Invalid style choice 'fluffy'
+    """
+    And the exit status should be 3
