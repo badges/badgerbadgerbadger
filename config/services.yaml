@@ -24,3 +24,9 @@ pulls:
   service_root: githubbadges.herokuapp.com
   url_path:     github.com
   suffix:       pulls
+
+issues:
+  alt_text:     Github Issues
+  service_root: githubbadges.herokuapp.com
+  url_path:     github.com
+  suffix:       issues
