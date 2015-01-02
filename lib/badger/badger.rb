@@ -37,6 +37,10 @@ module Badger
       Config.instance.config['badge_type'] = type
     end
 
+    def style style
+      Config.instance.config['badge_style'] = style
+    end
+
     def to_s
       self.uniq!
 

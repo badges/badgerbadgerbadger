@@ -20,6 +20,7 @@ module Badger
       @badger = Badger.new Badger.git_remote dir
 
       @badger.badge_type 'png' if options[:png]
+      @badger.style options[:style] if options[:style]
 
       @badger.add 'travis' if Badger.has_travis? dir
       @badger.add 'gemnasium' if Badger.has_gemfile? dir
@@ -43,8 +44,6 @@ module Badger
       end
 
       @badger.bonus
-
-      @badger.set_style options[:style] if options[:style]
       puts @badger.to_s
     end
 

@@ -108,6 +108,14 @@ module Badger
       end
     end
 
+    context 'alternative styles' do
+      it 'appends a style parameter' do
+        @badger.style 'flat-square'
+        @badger.add 'issues'
+        expect(@badger[0]).to eq "[![Github Issues](http://githubbadges.herokuapp.com/doge/wow/issues.svg?style=flat-square)](https://github.com/doge/wow/issues)"
+      end
+    end
+
     context 'output' do
       it 'should produce some lines of text' do
         @badger.add 'travis'
