@@ -18,3 +18,9 @@ codeclimate:
   alt_text:   Code Climate
   url_path:   codeclimate.com/github
   badge_slug: codeclimate/github
+
+pulls:
+  alt_text:     Pending Pull-Requests
+  service_root: githubbadges.herokuapp.com
+  url_path:     github.com
+  suffix:       pulls
