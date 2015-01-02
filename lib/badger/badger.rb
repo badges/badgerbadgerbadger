@@ -38,6 +38,11 @@ module Badger
     end
 
     def style style
+      unless Config.instance.config['valid_styles'].include? style
+        puts "Invalid style choice '#{style}'"
+        exit 3
+      end
+      
       Config.instance.config['badge_style'] = style
     end
 

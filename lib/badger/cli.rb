@@ -21,13 +21,7 @@ module Badger
 
       @badger.badge_type 'png' if options[:png]
 
-      if options[:style]
-        unless Config.instance.config['valid_styles'].include? options[:style]
-          puts "Invalid style choice '#{options[:style]}'"
-          exit 3
-        end
-        @badger.style options[:style]
-      end
+      @badger.style options[:style] if options[:style]
 
       @badger.add 'travis' if Badger.has_travis? dir
       @badger.add 'gemnasium' if Badger.has_gemfile? dir
