@@ -10,7 +10,13 @@ module Badger
 
   def Badger.git_remote dir
     begin
-      remote = is_repo?(dir).remotes.first.url
+      remote = nil
+      is_repo?(dir).remotes.each do |r|
+        if r.url.match /github.com/
+          remote = r.url
+        end
+      end
+
     rescue NoMethodError
       puts 'This repo does not appear to have a github remote'
       exit 2
