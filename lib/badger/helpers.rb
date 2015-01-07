@@ -12,7 +12,7 @@ module Badger
     begin
       remote = nil
       is_repo?(dir).remotes.each do |r|
-        if r.url.to_s.match /github.com/
+        if r.url.match /github.com/
           remote = r.url
         end
       end
