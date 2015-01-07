@@ -25,7 +25,7 @@ or add it to your Gemfile
 Then
 
     badger badge
-    [![Build Status](https://travis-ci.org/doge/wow.svg)](https://travis-ci.org/doge/wow)
+    [![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
     [![Dependency Status](http://img.shields.io/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
     [![Coverage Status](http://img.shields.io/coveralls/doge/wow.svg)](https://coveralls.io/r/doge/wow)
     [![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
