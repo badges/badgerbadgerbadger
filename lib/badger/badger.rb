@@ -42,7 +42,7 @@ module Badger
         puts "Invalid style choice '#{style}'"
         exit 3
       end
-      
+
       Config.instance.config['badge_style'] = style
     end
 
