@@ -17,8 +17,9 @@ module Badger
         ]
       end
 
-      badge_url = '%s/%s' % [
+      badge_url = '%s/%s%s' % [
         base_url,
+        params['ugly_cruft'],
         github_slug
       ]
 
