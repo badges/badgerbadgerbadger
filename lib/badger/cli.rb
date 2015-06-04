@@ -14,6 +14,7 @@ module Badger
     long_desc File.read File.join File.dirname( __FILE__), '..', '..', 'DESC.md'
     method_option :png, :type => :boolean, :default => false, :desc => 'Generate PNG badges instead of the default SVG (because sometimes Github does caching things)'
     method_option :pulls, :type => :boolean, :default => false, :desc => 'Generate Github pull-request and issue-count badges'
+    method_option :size, :type => :boolean, :default => false, :desc => 'Generate repo size badge'
     method_option :style, :type => :string, :default => nil, :desc => "Choose a different badge style (currently supported: #{Config.instance.config['valid_styles'].join ', '})"
 
     def badge dir = '.'
@@ -30,6 +31,8 @@ module Badger
 
       @badger.add 'issues' if options[:pulls]
       @badger.add 'pulls' if options[:pulls]
+
+      @badger.add 'size' if options[:size]
 
       if gemspec_params = Badger.search_gemspec(dir)
         @badger.rubygem gemspec_params[:rubygem]

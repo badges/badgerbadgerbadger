@@ -30,3 +30,10 @@ issues:
   service_root: githubbadges.herokuapp.com
   url_path:     github.com
   suffix:       issues
+
+size:
+  alt_text:     Repo Size
+  service_root: reposs.herokuapp.com
+  url_path:     github.com
+  # REST? Fuck REST
+  ugly_cruft:   ?path=
