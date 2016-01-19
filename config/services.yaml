@@ -32,8 +32,9 @@ issues:
   suffix:       issues
 
 size:
-  alt_text:     Repo Size
-  service_root: reposs.herokuapp.com
-  url_path:     github.com
+  alt_text:          Repo Size
+  service_root:      reposs.herokuapp.com
+  url_path:          github.com
   # REST? Fuck REST
-  ugly_cruft:   ?path=
+  ugly_cruft:        ?path=
+  no_file_extension: true

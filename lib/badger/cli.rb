@@ -15,7 +15,7 @@ module Badger
     method_option :png, :type => :boolean, :default => false, :desc => 'Generate PNG badges instead of the default SVG (because sometimes Github does caching things)'
     method_option :pulls, :type => :boolean, :default => false, :desc => 'Generate Github pull-request and issue-count badges'
     method_option :size, :type => :boolean, :default => false, :desc => 'Generate repo size badge'
-    method_option :style, :type => :string, :default => nil, :desc => "Choose a different badge style (currently supported: #{Config.instance.config['valid_styles'].join ', '})"
+    method_option :style, :type => :string, :default => 'flat-square', :desc => "Choose a different badge style (currently supported: #{Config.instance.config['valid_styles'].join ', '})"
 
     def badge dir = '.'
       @badger = Badger.new Badger.git_remote dir
@@ -47,7 +47,7 @@ module Badger
         @badger.license license_type
       end
 
-      @badger.bonus
+    #  @badger.bonus
       puts @badger.to_s
     end
 
