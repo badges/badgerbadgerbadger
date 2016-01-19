@@ -15,5 +15,4 @@ Scenario: Include 'size' badge
   [![Repo Size](http://reposs.herokuapp.com/?path=doge/wow)](https://github.com/doge/wow)
   [![Gem Version](http://img.shields.io/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
   [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
-  [![Badges](http://img.shields.io/:badges-8/8-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
   """

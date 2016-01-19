@@ -47,7 +47,7 @@ module Badger
         @badger.license license_type
       end
 
-      @badger.bonus
+    #  @badger.bonus
       puts @badger.to_s
     end
 

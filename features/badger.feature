@@ -14,12 +14,15 @@ Feature: Badge robot
 [![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
 [![Gem Version](http://img.shields.io/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
-[![Badges](http://img.shields.io/:badges-7/7-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
     """
     And the output should not contain:
     """
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+    """
+    And the output should not contain:
+    """
+[![Badges](http://img.shields.io/:badges-7/7-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
     """
 
    Scenario: Handle a non-git-repo gracefully

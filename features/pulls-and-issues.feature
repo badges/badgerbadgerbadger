@@ -16,5 +16,4 @@ Scenario: One with everything
   [![Pending Pull-Requests](http://githubbadges.herokuapp.com/doge/wow/pulls.svg)](https://github.com/doge/wow/pulls)
   [![Gem Version](http://img.shields.io/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
   [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
-  [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
   """
