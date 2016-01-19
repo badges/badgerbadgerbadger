@@ -5,15 +5,15 @@ Feature: Alternative styles
 
   @travis @gemnasium @coveralls @gemspec @mit
   Scenario: One with everything
-    When I successfully run `badger badge --style flat-square /tmp/wow_repo`
+    When I successfully run `badger badge --style flat /tmp/wow_repo`
     Then the output should contain:
     """
-[![Build Status](http://img.shields.io/travis/doge/wow.svg?style=flat-square)](https://travis-ci.org/doge/wow)
-[![Dependency Status](http://img.shields.io/gemnasium/doge/wow.svg?style=flat-square)](https://gemnasium.com/doge/wow)
-[![Coverage Status](http://img.shields.io/coveralls/doge/wow.svg?style=flat-square)](https://coveralls.io/r/doge/wow)
-[![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.svg?style=flat-square)](https://codeclimate.com/github/doge/wow)
-[![Gem Version](http://img.shields.io/gem/v/suchgem.svg?style=flat-square)](https://rubygems.org/gems/suchgem)
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://doge.mit-license.org)
+[![Build Status](http://img.shields.io/travis/doge/wow.svg?style=flat)](https://travis-ci.org/doge/wow)
+[![Dependency Status](http://img.shields.io/gemnasium/doge/wow.svg?style=flat)](https://gemnasium.com/doge/wow)
+[![Coverage Status](http://img.shields.io/coveralls/doge/wow.svg?style=flat)](https://coveralls.io/r/doge/wow)
+[![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.svg?style=flat)](https://codeclimate.com/github/doge/wow)
+[![Gem Version](http://img.shields.io/gem/v/suchgem.svg?style=flat)](https://rubygems.org/gems/suchgem)
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat)](http://doge.mit-license.org)
     """
   Scenario: Invalid style choice
     When I run `badger badge --style fluffy /tmp/wow_repo`

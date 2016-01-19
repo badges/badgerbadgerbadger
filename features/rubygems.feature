@@ -8,8 +8,8 @@ Feature: Get rubygems badge
     When I successfully run `badger badge /tmp/wow_repo`
     Then the output should contain:
     """
-[![Gem Version](http://img.shields.io/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+[![Gem Version](http://img.shields.io/gem/v/suchgem.svg?style=flat-square)](https://rubygems.org/gems/suchgem)
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://doge.mit-license.org)
     """
 
   @gemspecmultilicense @gpl3
@@ -17,10 +17,10 @@ Feature: Get rubygems badge
     When I successfully run `badger badge /tmp/wow_repo`
     Then the output should contain:
     """
-[![Gem Version](http://img.shields.io/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
-[![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
-[![License](http://img.shields.io/:license-gpl3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.html)
+[![Gem Version](http://img.shields.io/gem/v/suchgem.svg?style=flat-square)](https://rubygems.org/gems/suchgem)
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://doge.mit-license.org)
+[![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![License](http://img.shields.io/:license-gpl3-blue.svg?style=flat-square)](http://www.gnu.org/licenses/gpl-3.0.html)
     """
 
   @gemspecnolicense
@@ -28,7 +28,7 @@ Feature: Get rubygems badge
     When I successfully run `badger badge /tmp/wow_repo`
     Then the output should contain:
     """
-[![Gem Version](http://img.shields.io/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
+[![Gem Version](http://img.shields.io/gem/v/suchgem.svg?style=flat-square)](https://rubygems.org/gems/suchgem)
     """
 
     And the output should not contain:
@@ -41,6 +41,6 @@ License
     When I successfully run `badger badge /tmp/wow_repo`
     Then the output should contain:
     """
-[![Gem Version](http://img.shields.io/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+[![Gem Version](http://img.shields.io/gem/v/suchgem.svg?style=flat-square)](https://rubygems.org/gems/suchgem)
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://doge.mit-license.org)
     """
