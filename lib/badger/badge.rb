@@ -1,9 +1,15 @@
 module Badger
   def Badger.badge text, badge_url, target_url
-    badge_url = "%s.%s" % [
+    if text == "Repo Size"
+      badge_url = "%s" % [
+      badge_url
+    ]
+    else
+      badge_url = "%s.%s" % [
       badge_url,
       Config.instance.config['badge_type']
     ]
+    end
 
     badge_style = Config.instance.config['badge_style']
     badge_url = "%s?style=%s" % [

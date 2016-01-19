@@ -13,7 +13,7 @@ module Badger
     context 'size badge' do
       it 'has a size badge' do
         @badger.add 'size'
-        expect(@badger[0]).to eq '[![Repo Size](http://reposs.herokuapp.com/?path=doge/wow.svg)](https://github.com/doge/wow)'
+        expect(@badger[0]).to eq '[![Repo Size](http://reposs.herokuapp.com/?path=doge/wow)](https://github.com/doge/wow)'
       end
     end
   end
