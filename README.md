@@ -7,11 +7,11 @@
 [![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg?style=flat-square)](https://rubygems.org/gems/badgerbadgerbadger)
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
-#Badger
+# Badger
 
 Because I grow weary of copy-n-pasting the badge URLs into the README of every project, and the [img.shields.io](http://img.shields.io) API now supports all of the services I use
 
-##Usage
+## Usage
 
 Install it
 
@@ -41,7 +41,7 @@ If you're on a Mac, pipe the output into `pbcopy` to add the stuff directly to y
 
     badger badge | pbcopy
 
-##Help me make it better
+## Help me make it better
 
     git clone https://github.com/pikesley/badger
     cd badger
