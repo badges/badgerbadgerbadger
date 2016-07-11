@@ -15,6 +15,7 @@ module Badger
     method_option :png, :type => :boolean, :default => false, :desc => 'Generate PNG badges instead of the default SVG (because sometimes Github does caching things)'
     method_option :pulls, :type => :boolean, :default => false, :desc => 'Generate Github pull-request and issue-count badges'
     method_option :size, :type => :boolean, :default => false, :desc => 'Generate repo size badge'
+    method_option :dci, :type => :boolean, :default => false, :desc => 'Include a Dependency CI badge (experimental)'
     method_option :style, :type => :string, :default => 'flat-square', :desc => "Choose a different badge style (currently supported: #{Config.instance.config['valid_styles'].join ', '})"
 
     def badge dir = '.'
@@ -26,6 +27,7 @@ module Badger
 
       @badger.add 'travis' if Badger.has_travis? dir
       @badger.add 'gemnasium' if Badger.has_gemfile? dir
+      @badger.dependencyci if options[:dci]
       @badger.add 'coveralls' if Badger.has_coveralls? dir
       @badger.add 'codeclimate' if @badger.any?
 
