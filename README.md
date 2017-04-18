@@ -9,6 +9,8 @@
 [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
 # Badger
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/badges/badgerbadgerbadger?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Because I grow weary of copy-n-pasting the badge URLs into the README of every project, and the [img.shields.io](http://img.shields.io) API now supports all of the services I use
 
 ## Usage
