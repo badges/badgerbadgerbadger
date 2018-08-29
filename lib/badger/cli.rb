@@ -14,6 +14,7 @@ module Badger
     long_desc File.read File.join File.dirname( __FILE__), '..', '..', 'DESC.md'
     method_option :png, :type => :boolean, :default => false, :desc => 'Generate PNG badges instead of the default SVG (because sometimes Github does caching things)'
     method_option :pulls, :type => :boolean, :default => false, :desc => 'Generate Github pull-request and issue-count badges'
+    method_option :travis_com, :type => :boolean, :default => false, :desc => 'Description'
     method_option :size, :type => :boolean, :default => false, :desc => 'Generate repo size badge'
     method_option :dci, :type => :boolean, :default => false, :desc => 'Include a Dependency CI badge (experimental)'
     method_option :style, :type => :string, :default => 'flat-square', :desc => "Choose a different badge style (currently supported: #{Config.instance.config['valid_styles'].join ', '})"
@@ -25,7 +26,8 @@ module Badger
 
       @badger.style options[:style] if options[:style]
 
-      @badger.add 'travis' if Badger.has_travis? dir
+      @badger.add 'travis' if Badger.has_travis? dir and not options[:travis_com]
+      @badger.add 'travis-com' if Badger.has_travis? dir and options[:travis_com]
       @badger.add 'gemnasium' if Badger.has_gemfile? dir
       @badger.dependencyci if options[:dci]
       @badger.add 'coveralls' if Badger.has_coveralls? dir

@@ -4,6 +4,12 @@ travis:
   url_path:     travis-ci.org
   badge_slug:   travis
 
+travis-com:
+  alt_text:     Build Status
+  scheme:       https
+  url_path:     travis-ci.com
+  badge_slug:   travis/com
+
 coveralls:
   alt_text:     Coverage Status
   url_path:     coveralls.io/r
