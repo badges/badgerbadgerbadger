@@ -28,6 +28,10 @@ module Badger
       self << Rubygem.badge(name)
     end
 
+    def dependencyci
+      self << DependencyCI.badge(github_slug)
+    end
+
     def bonus
       self.uniq!
       self << Bonus.badge(self)

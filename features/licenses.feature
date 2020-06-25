@@ -8,7 +8,7 @@ Feature: Get license badges
     When I successfully run `badger badge /tmp/wow_repo`
     Then the output should contain:
     """
-![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://doge.mit-license.org)
     """
     And the output should not contain:
     """
@@ -16,8 +16,8 @@ Apache
     """
     And the output should not contain:
     """
-![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
-![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://doge.mit-license.org)
+![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://doge.mit-license.org)
     """
 
   @license @apache
@@ -25,7 +25,7 @@ Apache
     When I successfully run `badger badge /tmp/wow_repo`
     Then the output should contain:
     """
-![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
     """
     And the output should not contain:
     """
@@ -37,7 +37,7 @@ GPL
     When I successfully run `badger badge /tmp/wow_repo`
     Then the output should contain:
     """
-![License](http://img.shields.io/:license-gpl2-blue.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
+![License](http://img.shields.io/:license-gpl2-blue.svg?style=flat-square)](http://www.gnu.org/licenses/gpl-2.0.html)
     """
     And the output should not contain:
     """
@@ -49,7 +49,7 @@ MIT
     When I successfully run `badger badge /tmp/wow_repo`
     Then the output should contain:
     """
-![License](http://img.shields.io/:license-gpl3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.html)
+![License](http://img.shields.io/:license-gpl3-blue.svg?style=flat-square)](http://www.gnu.org/licenses/gpl-3.0.html)
     """
 
   @license @doge-license
