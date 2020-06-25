@@ -3,7 +3,7 @@ module Badger
     badge_url = "%s.%s" % [
       badge_url,
       Config.instance.config['badge_type']
-    ] unless text == 'Repo Size'
+    ] unless ['Repo Size', 'Dependency CI'].include? text
 
     badge_style = Config.instance.config['badge_style']
     badge_url = "%s?style=%s" % [

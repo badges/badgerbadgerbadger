@@ -24,6 +24,12 @@ module Badger
         expect(@badger.length).to eq 2
       end
 
+      it 'has a dependencyci badge' do
+        @badger.dependencyci
+        expect(@badger[0]).to eq "[![Dependency CI](http://dependencyci.com/github/doge/wow/badge)](http://dependencyci.com/github/doge/wow)"
+        expect(@badger.length).to eq 1
+      end
+
       it 'handles an unknown service gracefully' do
         @badger.add 'doge-service'
         expect(@badger.length).to eq 0
